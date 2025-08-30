@@ -1,0 +1,6 @@
+ID;Nome;Email;Telefone;Curso;Modalidade;Aceita Termos;IP;Data/Hora;Etiqueta;Posição Kanban;Prioridade;Notas
+1;João Silva;joao.silva@teste.com;(11) 99999-1111;eja;online;Sim;192.168.1.100;01/01/2024 10:00:00;pendente;1;media;Lead interessado no curso EJA
+2;Maria Santos;maria.santos@teste.com;(11) 99999-2222;eja;presencial;Sim;192.168.1.101;01/01/2024 11:00:00;contatado;2;alta;Já foi contatada, aguardando retorno
+3;Pedro Oliveira;pedro.oliveira@teste.com;(11) 99999-3333;eja;online;Sim;192.168.1.102;01/01/2024 12:00:00;interessado;1;media;Muito interessado, enviar proposta
+4;Ana Costa;ana.costa@teste.com;(11) 99999-4444;eja;presencial;Sim;192.168.1.103;01/01/2024 13:00:00;pendente;3;baixa;Aguardando primeiro contato
+5;Carlos Ferreira;carlos.ferreira@teste.com;(11) 99999-5555;eja;online;Sim;192.168.1.104;01/01/2024 14:00:00;nao_interessado;1;media;Não demonstrou interesse

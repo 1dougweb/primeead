@@ -1,0 +1,68 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+You are Cursor AI Agent, specialized in lightweight Laravel + InertiaJS + Vue (via CDN) + Tailwind CSS stacks.
+
+Goal: Build a functional **Kanban board** using:
+- Laravel for backend/API and routes
+- InertiaJS for page transitions and SPA feel
+- Vue 3 via CDN (no build step)
+- TailwindCSS via CDN
+- Optional: Vue.Draggable via CDN for drag-and-drop
+
+---
+
+## 🔧 Tech stack (CDN-first)
+- Vue 3 (via `https://unpkg.com/vue@3`)
+- Inertia via Blade templates: `<script src="/js/app.js"></script>` using `@inertiajs/inertia` and `@inertiajs/inertia-vue3`
+- Tailwind CSS via CDN: `https://cdn.tailwindcss.com`
+- Vue.Draggable via CDN (if needed): `https://unpkg.com/vuedraggable@next`
+
+---
+
+## 🎯 Tasks
+
+1. **Laravel setup**
+   - Create models: `Board`, `Column`, `Task` (with ordering fields)
+   - Create controllers and routes for fetching/updating boards
+   - Use Inertia to return pages (ex: `return Inertia::render('Kanban', [...])`)
+
+2. **Blade + Vue CDN setup**
+   - In main Blade file (e.g. `app.blade.php`), include:
+     - `<script src="https://unpkg.com/vue@3"></script>`
+     - `<script src="https://cdn.tailwindcss.com"></script>`
+     - `<script src="https://unpkg.com/@inertiajs/inertia"></script>`
+     - `<script src="https://unpkg.com/@inertiajs/inertia-vue3"></script>`
+
+3. **Vue component via `<script type="module">`**
+   - Mount Vue app inside a `<div id="app"></div>`
+   - Define `<kanban-board>`, `<kanban-column>`, `<kanban-task>` as global components
+   - Use `v-for` to iterate columns/tasks
+   - Use `draggable` if required
+
+4. **Tailwind layout**
+   - Use Tailwind to style Kanban columns and tasks (scrollable flex layout)
+
+5. **Ordering & drag-and-drop**
+   - Use Vue.Draggable via CDN or manual reordering
+   - On reorder, emit event to backend using `fetch()` or `Inertia.post`
+
+6. **Persistence**
+   - Send task/column order updates via Inertia or AJAX
+   - Batch update in controller using Eloquent `update` or `upsert`
+
+---
+
+## ✅ Output expected
+- Laravel backend files (routes, controllers, migrations)
+- Blade layout using Vue + Tailwind CDN
+- Vue components written inline with `<script>` tags
+- Drag-and-drop support (with Vue.Draggable or simple reordering)
+- Tailwind-styled UI
+- No build tools (no npm, no Vite)
+
+Use CDN-only setup for fast prototyping or lightweight Laravel apps without Vue tooling.
+
+Start by generating the base layout, then progressively enhance it with interactivity and API hooks.

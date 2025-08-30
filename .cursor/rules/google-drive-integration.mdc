@@ -1,0 +1,146 @@
+---
+description: Our previously published guide on Google Drive integration with Laravel has become our most viewed blog post, showing that there’s a big interest in cloud storage solutions within the Laravel community. Because this topic is so important and people need up-to-date information, we’ve written this new version of the guide for Laravel 12.
+---
+
+# Setup Google Drive API for Laravel 12
+
+- Integrating cloud storage like Google Drive with web apps is getting more common. Laravel, a powerful PHP framework, lets you integrate with different services, including Google Drive, to add more features to your apps. In this guide, we’ll show you how to connect Google Drive storage with Laravel 12, step by step. By the end of this tutorial, you’ll have your Google API credentials and know how to use them with Laravel Storage, offering more options for your app.
+
+# Getting your Client ID and Secret
+
+- To start, sign in to your Google Account and go to the Google Developers Console at [https://console.developers.google.com/].
+
+# Creating a new project
+
+- Once in the Google Developers Console, you’ll use the dropdown menu at the top of the page to create a new project. This is a straightforward process, but remember that it may take a few seconds for your new project to be ready.
+
+![visual image](https://www.luckymedia.dev/_next/image?url=https%3A%2F%2Fcms.luckymedia.dev%2Fassets%2Fposts%2F1-createnewproject-1.jpg&w=1080&q=75)
+
+# Enabling the Google Drive API
+
+- With your project selected, head to the Library section to find and enable the Google Drive API. This is an important step as it allows your Laravel application to communicate with Google Drive.
+
+![visual image](https://www.luckymedia.dev/_next/image?url=https%3A%2F%2Fcms.luckymedia.dev%2Fassets%2Fposts%2F3-googledriveapi2-1-1706198276.jpg&w=640&q=75)
+
+# Creating credentials
+- Navigate to the OAuth Consent Screen tab and provide the necessary details. This includes your application’s name, a user support email, and developer contact information. You can leave the other fields as default for the moment.
+
+![visual image](https://www.luckymedia.dev/_next/image?url=https%3A%2F%2Fcms.luckymedia.dev%2Fassets%2Fposts%2F4-oauthconsentscreen-1.jpg&w=640&q=75)
+
+# Scopes and adding test users
+- The scopes can be left as default, feel free to skip that step. To test properly, add the emails of users who are allowed to test.
+
+![visual image](https://www.luckymedia.dev/_next/image?url=https%3A%2F%2Fcms.luckymedia.dev%2Fassets%2Fposts%2F6-testusers-1.jpg&w=640&q=75)
+
+# Creating OAuth Client ID
+- In the Credentials section, select Create Credentials and choose OAuth Client ID from the dropdown.
+
+![visual image](https://www.luckymedia.dev/_next/image?url=https%3A%2F%2Fcms.luckymedia.dev%2Fassets%2Fposts%2F10-0auth2-1.jpg&w=640&q=75)
+
+# Setting up your web application for OAuth
+- Choose Web Application as the application type and provide a meaningful name. You’ll also need to add the authorized redirect URI, which for now will be [https://developers.google.com/oauthplayground]. You’ll need this to get your refresh token; you can remove it later. Click Create and write down your Client ID and Client Secret, as you’ll need them later.
+
+![visual image](https://www.luckymedia.dev/_next/image?url=https%3A%2F%2Fcms.luckymedia.dev%2Fassets%2Fposts%2F9-create0authclientid-1.jpg&w=640&q=75)
+
+# Getting your Refresh Token
+- Visit [https://developers.google.com/oauthplayground] to configure your own OAuth credentials. Enter your Client ID and Client Secret.
+
+![visual image](https://www.luckymedia.dev/_next/image?url=https%3A%2F%2Fcms.luckymedia.dev%2Fassets%2Fposts%2F10-0auth2-1.jpg&w=640&q=75)
+
+# Selecting Drive API scope
+- On the left menu, scroll down to Drive API v3 and select the /auth/drive/ option. Click on Authorize APIs and allow access to your account when asked. You might get some warnings, but it’s fine to keep going.
+
+![visual image](https://www.luckymedia.dev/_next/image?url=https%3A%2F%2Fcms.luckymedia.dev%2Fassets%2Fposts%2F11-selectdrive1-1.jpg&w=1200&q=75)
+
+# Auto-refresh your token
+- After authorizing the APIs, select the option to auto-refresh the token before it expires. Finally, exchange the authorization code for tokens.
+
+![visual image](https://www.luckymedia.dev/_next/image?url=https%3A%2F%2Fcms.luckymedia.dev%2Fassets%2Fposts%2F12-autorefreshtoken-1.jpg&w=640&q=75)
+
+# Accessing your Refresh Token in step 3
+- In the last step, you’ll be able to retrieve your refresh token, which is necessary for your Laravel application to communicate with Google Drive. We will need this token when we configure our Laravel application.
+
+![visual image](https://www.luckymedia.dev/_next/image?url=https%3A%2F%2Fcms.luckymedia.dev%2Fassets%2Fposts%2F13-refreshtoken-1.jpg&w=640&q=75)
+
+# Configuring Laravel for Google Drive integration
+- Now that you’ve got your Google Drive API ready for your Laravel project, the next step is to configure your Laravel application to connect with Google Drive. We’ll show you how to do this in the next article.
+
+# Why Google Drive integration?
+- Integrating different platforms can be tough in the changing world of web development. We recently combined Laravel and Google Drive. This article will show you how to create a new file in Laravel and get its ID from Google Drive.
+
+- Google Drive uses unique IDs, not names, to recognize files. This can make getting the ID of a file made in Laravel hard. But with the right steps, you can do it.
+
+# Google Drive API setup
+
+- Before coding, you need to connect with the Google Drive API. Follow the steps in this guide for help. The guide shows how to make a new file in your Google Drive folder. If that’s all you want, you can stop here.
+
+- But if you need to upload files, get their ID, delete or change their names, keep reading. We’ll think you’ve set things up and made a simple file on Google Drive, as the guide above shows.
+
+# Coding with Laravel
+
+- We used Laravel Facades to clean up our code for this project. But to keep it simple, we won’t go into that now. All the coding will be in a controller. So, create a controller and start coding.
+
+- Imagine you’re getting a request from your view, and we’re taking that request in our store function. You need the following code to connect with Google Drive:
+
+```php
+$client = new \Google_Client();
+$client->setClientId(env('GOOGLE_DRIVE_CLIENT_ID'));
+$client->setClientSecret(env('GOOGLE_DRIVE_CLIENT_SECRET'));
+$client->refreshToken(env('GOOGLE_DRIVE_REFRESH_TOKEN'));
+$service = new \Google_Service_Drive($client);
+```
+
+# Creating client-specific folders
+- In our project, we had to create a unique folder for each customer. We also wanted a main folder that was different from the main Google Drive folder. That’s why we use parents, which gets the folder’s value from the env file. We save the folderID for the customer so we can later navigate there or delete it if needed.
+
+```php 
+$fileMetadata = new \Google_Service_Drive_DriveFile([
+	'name' => 'your folder name',
+	'parents' => [env('GOOGLE_DRIVE_FOLDER_ID')],
+	'mimeType' => 'application/vnd.google-apps.folder'
+]);
+
+$folderId = $service->files->create($fileMetadata, [
+	'fields' => 'id'
+]);
+```
+
+# This is how the folder structure will look after implementing the code:
+
+```bash
+GoogleDriveRootFolder/ourMainFolder/ourNewClientFolder/ourfile.jpg
+```
+
+# Uploading files to client folders
+- After creating the client folder, we can upload our files to it. We can use a basic HTML form to upload the file, and in our case, the input name is myfile. We can skip the first line of code if we want to rename the file, but we should include it if we want to keep the original file name. We have a unique folder for each client, and that’s why we include the folderId in the parents section.
+
+```php
+$fileName = $request->file('myfile')->getClientOriginalName();
+
+$fileMetadata = new \Google_Service_Drive_DriveFile([
+	'name' => $fileName,
+	'parents' => [$folderId]
+]);
+
+$file = file_get_contents($request->file('myfile'));
+
+$fileId= $service->files->create($fileMetadata, [
+	'data' => $file,
+	'mimeType' => 'image/jpeg',
+	'uploadType' => 'multipart',
+	'fields' => 'id'
+]);
+```
+
+# Deleting Files from Google Drive
+- Our file is successfully uploaded to the folder that we created a step before. Now, if we want to delete that file, we can make use of the Laravel Storage facade, taking into consideration that you did what was suggested in the article.
+
+```php
+Storage::disk('google')->delete($item->items['fileId']);
+```
+
+# A Note on Refresh Tokens
+- The refresh token provided by Google will be removed after 1 week. You must publish your app if you want to use it without the need to generate a new refresh token each week.
+
+# Conclusion
+- Linking Laravel to Google Drive can seem complex, but it gets much easier with a good plan. We hope this guide has made your journey smoother. Check our blog posts for more tips and real-world examples of web development.

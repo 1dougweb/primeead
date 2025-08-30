@@ -1,0 +1,12 @@
+# Cron jobs para o sistema de pagamentos
+# Executar a cada 5 minutos durante horário comercial (8h às 18h)
+*/5 8-18 * * * cd /home/douglas/Apps/ec && php artisan payments:process-reminders >> /dev/null 2>&1
+
+# Executar notificações agendadas a cada hora
+0 * * * * cd /home/douglas/Apps/ec && php artisan payments:schedule-notifications >> /dev/null 2>&1
+
+# Gerar pagamentos parcelados automaticamente (uma vez por dia às 8h)
+0 8 * * * cd /home/douglas/Apps/ec && php artisan payments:generate-installments >> /dev/null 2>&1
+
+# Limpar logs antigos (uma vez por dia às 2h)
+0 2 * * * find /home/douglas/Apps/ec/storage/logs -name "*.log" -mtime +7 -delete >> /dev/null 2>&1 

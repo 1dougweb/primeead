@@ -1,0 +1,165 @@
+q
+composer --version
+q
+which composer
+ Registra o componente de máscara
+new Vue({
+    el: '#app',
+    data: {
+        formData: {
+            nome: '',
+            email: '',
+            telefone: '',
+            curso: '',
+            termos: false
+        },
+        mensagemEnvio: '',
+        statusEnvio: false,
+        activeTab: 'linguagens', // Para a seção de conteúdo do curso
+        phoneInput: null, // Referência para o objeto intlTelInput
+        phoneInputMask: null, // Referência para o objeto Cleave
+        enviando: false // Flag para controlar o estado de envio
+    },
+    mounted() {
+        // Carregar Axios via CDN se não estiver disponível
+        if (!window.axios) {
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js';
+            script.async = true;
+            document.head.appendChild(script);
+        }
+        
+        // Inicializar o seletor de país com bandeira para o telefone
+        this.phoneInput = window.intlTelInput(this.$refs.phoneInput, {
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+            preferredCountries: ['br', 'pt', 'us'],
+            initialCountry: 'br',
+            separateDialCode: true,
+            autoPlaceholder: 'aggressive'
+        });
+        
+        // Inicializar máscara para o telefone
+        new Cleave(this.$refs.phoneInput, {
+            phone: true,
+            phoneRegionCode: 'BR'
+        });
+    },
+    methods: {
+        scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        },
+        enviarFormulario() {
+            // Validação do formulário
+            if (!this.formData.nome || !this.formData.email || !this.$refs.phoneInput.value || !this.formData.curso || !this.formData.termos) {
+                this.mensagemEnvio = 'Por favor, preencha todos os campos e aceite os termos.';
+                this.statusEnvio = false;
+                return;
+            }
+            
+            // Validação do email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(this.formData.email)) {
+                this.mensagemEnvio = 'Por favor, insira um email válido.';
+                this.statusEnvio = false;
+                return;
+            }
+            
+            // Validação do telefone
+            if (!this.phoneInput.isValidNumber()) {
+                this.mensagemEnvio = 'Por favor, insira um número de telefone válido.';
+                this.statusEnvio = false;
+                return;
+            }
+            
+            // Capturar o número de telefone completo com código do país
+            const numeroTelefone = this.phoneInput.getNumber();
+            
+            // Evitar múltiplos envios
+            if (this.enviando) return;
+            this.enviando = true;
+            
+            // Exibir mensagem de processamento
+            this.mensagemEnvio = 'Fazendo sua inscrição...';
+            this.statusEnvio = true;
+            
+            // Preparar os dados para envio
+            const dadosFormulario = {
+                nome: this.formData.nome,
+                email: this.formData.email,
+                telefone: numeroTelefone,
+                curso: this.formData.curso,
+                termos: this.formData.termos ? 'Aceito' : 'Não aceito'
+            };
+            
+            /*
+             * OPÇÕES PARA ENVIO DO FORMULÁRIO:
+             * 
+             * 1. EmailJS (implementado abaixo)
+             *    - Serviço que permite enviar emails diretamente do frontend
+             *    - Requer cadastro em https://www.emailjs.com/
+             *    - Substitua 'seu_service_id', 'seu_template_id' e 'seu_user_id' pelos seus dados
+             *
+             * 2. Formspree
+             *    - Altere a URL de envio para: 'https://formspree.io/f/seu_form_id'
+             *    - Cadastre-se em https://formspree.io/
+             *
+             * 3. API própria
+             *    - Altere a URL de envio para seu endpoint backend
+             *    - Exemplo: 'https://seusite.com/api/enviar-formulario'
+             */
+            
+            // ESCOLHA UMA DAS OPÇÕES ABAIXO E COMENTE A OUTRA
+            
+            // OPÇÃO 1: EmailJS
+            const urlEnvio = 'https://api.emailjs.com/api/v1.0/email/send';
+            const configEnvio = {
+                service_id: 'seu_service_id',
+                template_id: 'seu_template_id',
+                user_id: 'seu_user_id',
+                template_params: {
+                    ...dadosFormulario,
+                    assunto: 'Nova inscrição EJA'
+                }
+            };
+            
+            /* 
+            // OPÇÃO 2: Formspree
+            const urlEnvio = 'https://formspree.io/f/seu_form_id';
+            const configEnvio = dadosFormulario;
+            */
+            
+            // Enviar o formulário usando Axios
+            axios.post(urlEnvio, configEnvio)
+                .then(response => {
+                    // Sucesso no envio
+                    this.mensagemEnvio = 'Inscrição realizada com sucesso! Entraremos em contato em breve.';
+                    this.statusEnvio = true;
+                    
+                    // Limpar o formulário após o envio
+                    this.formData.nome = '';
+                    this.formData.email = '';
+                    this.$refs.phoneInput.value = '';
+                    this.formData.curso = '';
+                    this.formData.termos = false;
+                    this.phoneInput.setCountry('br');
+                    
+                    // Redirecionar para a página de agradecimento após um pequeno delay
+                    setTimeout(() => {
+                        window.location.href = 'obrigado.html';
+                    }, 2000);
+                })
+                .catch(error => {
+                    // Erro no envio
+                    console.error('Erro ao enviar o formulário:', error);
+                    this.mensagemEnvio = 'Ocorreu um erro ao enviar sua inscrição. Por favor, tente novamente.';
+                    this.statusEnvio = false;
+                })
+                .finally(() => {
+                    this.enviando = false;
+                });
+        }
+    }
+}); 

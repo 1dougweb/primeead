@@ -1,0 +1,462 @@
+@extends('layouts.admin')
+
+@section('title', 'Configurações do WhatsApp')
+
+@section('page-title', 'WhatsApp')
+
+@section('page-actions')
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-outline-primary" id="btn-refresh-status">
+            <i class="fas fa-sync-alt me-2"></i>
+            Atualizar Status
+        </button>
+    </div>
+@endsection
+
+@section('content')
+<div class="container-fluid">
+    <div class="row">
+        <!-- Configurações da API -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fab fa-whatsapp me-2 text-success"></i>
+                        Configurações da Evolution API
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <form action="{{ route('admin.settings.whatsapp.update') }}" method="POST" id="whatsapp-config-form">
+                        @csrf
+                        @method('PUT')
+                        
+                        <div class="mb-3">
+                            <label for="base_url" class="form-label">
+                                <i class="fas fa-server me-1"></i>
+                                URL da API
+                            </label>
+                            <input type="url" 
+                                   class="form-control @error('base_url') is-invalid @enderror" 
+                                   id="base_url" 
+                                   name="base_url"
+                                   value="{{ old('base_url', $settings['base_url'] ?? '') }}"
+                                   placeholder="http://localhost:8080"
+                                   required>
+                            <div class="form-text">
+                                Ex: http://localhost:8080 ou https://api.evolution.com
+                            </div>
+                            @error('base_url')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="api_key" class="form-label">
+                                <i class="fas fa-key me-1"></i>
+                                Chave da API
+                            </label>
+                            <div class="input-group">
+                                <input type="password" 
+                                       class="form-control @error('api_key') is-invalid @enderror" 
+                                       id="api_key" 
+                                       name="api_key"
+                                       value="{{ old('api_key', $settings['api_key'] ?? '') }}"
+                                       placeholder="Sua chave da API"
+                                       required>
+                                <button class="btn btn-outline-secondary" type="button" id="toggle-api-key">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="form-text">
+                                Chave de autenticação da Evolution API
+                            </div>
+                            @error('api_key')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="instance" class="form-label">
+                                <i class="fas fa-mobile-alt me-1"></i>
+                                Nome da Instância
+                            </label>
+                            <input type="text" 
+                                   class="form-control @error('instance') is-invalid @enderror" 
+                                   id="instance" 
+                                   name="instance"
+                                   value="{{ old('instance', $settings['instance'] ?? 'default') }}"
+                                   placeholder="default"
+                                   pattern="[a-zA-Z0-9_-]+"
+                                   required>
+                            <div class="form-text">
+                                Apenas letras, números, hífen e underscore
+                            </div>
+                            @error('instance')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save me-2"></i>
+                                Salvar Configurações
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Status da Conexão e QR Code -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">
+                        <i class="fas fa-qrcode me-2"></i>
+                        Conexão WhatsApp
+                    </h5>
+                    <div id="connection-status-badge">
+                        @if($connectionStatus['connected'])
+                            <span class="badge bg-success">
+                                <i class="fas fa-check-circle me-1"></i>
+                                Conectado
+                            </span>
+                        @else
+                            <span class="badge bg-danger">
+                                <i class="fas fa-times-circle me-1"></i>
+                                Desconectado
+                            </span>
+                        @endif
+                    </div>
+                </div>
+                <div class="card-body">
+                    <!-- Status da Conexão -->
+                    <div class="alert alert-info mb-3" id="status-message">
+                        <i class="fas fa-info-circle me-2"></i>
+                        {{ $connectionStatus['message'] }}
+                    </div>
+
+                    <!-- Container do QR Code -->
+                    <div class="text-center mb-3" id="qrcode-container">
+                        <div class="qr-placeholder">
+                            <i class="fas fa-qrcode display-4 text-muted"></i>
+                            <p class="text-muted mt-2">
+                                Configure a API e clique em "Gerar QR Code" para conectar
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Botões de Ação -->
+                    <div class="d-grid gap-2">
+                        <button type="button" class="btn btn-success" id="btn-create-instance" 
+                                @if(empty($settings['base_url']) || empty($settings['api_key'])) disabled @endif>
+                            <i class="fas fa-plus me-2"></i>
+                            Criar Nova Instância
+                        </button>
+                        
+                        <button type="button" class="btn btn-primary" id="btn-generate-qr"
+                                @if(empty($settings['base_url']) || empty($settings['api_key'])) disabled @endif>
+                            <i class="fas fa-qrcode me-2"></i>
+                            Gerar QR Code
+                        </button>
+
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-warning" id="btn-disconnect"
+                                    @if(!$connectionStatus['connected']) disabled @endif>
+                                <i class="fas fa-unlink me-2"></i>
+                                Desconectar
+                            </button>
+                            <button type="button" class="btn btn-danger" id="btn-delete-instance"
+                                    @if(empty($settings['base_url']) || empty($settings['api_key'])) disabled @endif>
+                                <i class="fas fa-trash me-2"></i>
+                                Deletar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Teste de Mensagem -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-paper-plane me-2"></i>
+                        Teste de Mensagem
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <form id="test-message-form">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="test_phone" class="form-label">Número de Telefone</label>
+                                <input type="tel" 
+                                       class="form-control" 
+                                       id="test_phone" 
+                                       name="phone"
+                                       placeholder="(11) 99999-9999"
+                                       required>
+                                <div class="form-text">
+                                    Formato: (DD) 9XXXX-XXXX
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="test_message" class="form-label">Mensagem</label>
+                                <textarea class="form-control" 
+                                          id="test_message" 
+                                          name="message"
+                                          rows="3" 
+                                          placeholder="Digite sua mensagem de teste..."
+                                          maxlength="1000"
+                                          required>Olá! Esta é uma mensagem de teste do sistema EJA Supletivo.</textarea>
+                                <div class="form-text">
+                                    Máximo 1000 caracteres
+                                </div>
+                            </div>
+                            <div class="col-md-2 d-flex align-items-end">
+                                <button type="submit" class="btn btn-success w-100"
+                                        @if(!$connectionStatus['connected']) disabled @endif>
+                                    <i class="fas fa-paper-plane me-2"></i>
+                                    Enviar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@push('scripts')
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Elementos DOM
+    const qrcodeContainer = document.getElementById('qrcode-container');
+    const statusMessage = document.getElementById('status-message');
+    const connectionBadge = document.getElementById('connection-status-badge');
+    const testMessageForm = document.getElementById('test-message-form');
+    
+    // Botões
+    const btnCreateInstance = document.getElementById('btn-create-instance');
+    const btnGenerateQr = document.getElementById('btn-generate-qr');
+    const btnRefreshStatus = document.getElementById('btn-refresh-status');
+    const btnDisconnect = document.getElementById('btn-disconnect');
+    const btnDeleteInstance = document.getElementById('btn-delete-instance');
+    const btnToggleApiKey = document.getElementById('toggle-api-key');
+
+    // URLs das rotas
+    const routes = {
+        createInstance: '{{ route("admin.settings.whatsapp.create-instance") }}',
+        qrCode: '{{ route("admin.settings.whatsapp.qr-code") }}',
+        status: '{{ route("admin.settings.whatsapp.status") }}',
+        disconnect: '{{ route("admin.settings.whatsapp.disconnect") }}',
+        deleteInstance: '{{ route("admin.settings.whatsapp.delete-instance") }}',
+        testMessage: '{{ route("admin.settings.whatsapp.test-message") }}'
+    };
+
+    // Toggle visibilidade da API Key
+    btnToggleApiKey.addEventListener('click', function() {
+        const apiKeyInput = document.getElementById('api_key');
+        const icon = this.querySelector('i');
+        
+        if (apiKeyInput.type === 'password') {
+            apiKeyInput.type = 'text';
+            icon.className = 'fas fa-eye-slash';
+        } else {
+            apiKeyInput.type = 'password';
+            icon.className = 'fas fa-eye';
+        }
+    });
+
+    // Criar instância
+    btnCreateInstance.addEventListener('click', async function() {
+        await executeAction(this, async () => {
+            const response = await fetch(routes.createInstance, {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                    'Content-Type': 'application/json'
+                }
+            });
+            return await response.json();
+        }, 'Instância criada com sucesso!');
+    });
+
+    // Gerar QR Code
+    btnGenerateQr.addEventListener('click', async function() {
+        await executeAction(this, async () => {
+            qrcodeContainer.innerHTML = `
+                <div class="text-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Carregando...</span>
+                    </div>
+                    <p class="mt-2 text-muted">Gerando QR Code...</p>
+                </div>
+            `;
+            
+            const response = await fetch(routes.qrCode);
+            const data = await response.json();
+            
+            if (data.success) {
+                if (data.data.connected) {
+                    qrcodeContainer.innerHTML = `
+                        <div class="alert alert-success">
+                            <i class="fas fa-check-circle me-2"></i>
+                            Dispositivo já conectado!
+                        </div>
+                    `;
+                } else if (data.data.qrcode) {
+                    qrcodeContainer.innerHTML = `
+                        <div class="qr-code-display">
+                            <img src="${data.data.qrcode}" class="img-fluid border rounded" alt="QR Code" style="max-width: 300px;">
+                            <p class="mt-3 text-muted">
+                                <i class="fab fa-whatsapp me-1"></i>
+                                Escaneie com o WhatsApp do seu celular
+                            </p>
+                            <small class="text-warning">
+                                <i class="fas fa-clock me-1"></i>
+                                QR Code expira em 60 segundos
+                            </small>
+                        </div>
+                    `;
+                    
+                    // Auto-refresh do status após mostrar QR code
+                    setTimeout(refreshStatus, 5000);
+                }
+            }
+            
+            return data;
+        });
+    });
+
+    // Atualizar status
+    btnRefreshStatus.addEventListener('click', refreshStatus);
+
+    // Desconectar
+    btnDisconnect.addEventListener('click', async function() {
+        if (!confirm('Tem certeza que deseja desconectar o WhatsApp?')) return;
+        
+        await executeAction(this, async () => {
+            const response = await fetch(routes.disconnect, {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                }
+            });
+            return await response.json();
+        }, 'WhatsApp desconectado com sucesso!');
+    });
+
+    // Deletar instância
+    btnDeleteInstance.addEventListener('click', async function() {
+        if (!confirm('Tem certeza que deseja deletar a instância? Esta ação não pode ser desfeita.')) return;
+        
+        await executeAction(this, async () => {
+            const response = await fetch(routes.deleteInstance, {
+                method: 'DELETE',
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                }
+            });
+            return await response.json();
+        }, 'Instância deletada com sucesso!');
+    });
+
+    // Teste de mensagem
+    testMessageForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const formData = new FormData(this);
+        
+        await executeAction(submitBtn, async () => {
+            const response = await fetch(routes.testMessage, {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(Object.fromEntries(formData))
+            });
+            return await response.json();
+        }, 'Mensagem de teste enviada com sucesso!');
+    });
+
+    // Função auxiliar para executar ações
+    async function executeAction(button, action, successMessage = 'Operação realizada com sucesso!') {
+        try {
+            button.disabled = true;
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Processando...';
+            
+            const result = await action();
+            
+            if (result.success) {
+                toastr.success(result.message || successMessage);
+                refreshStatus();
+            } else {
+                throw new Error(result.error || 'Erro desconhecido');
+            }
+        } catch (error) {
+            console.error('Erro:', error);
+            toastr.error('Erro: ' + error.message);
+        } finally {
+            button.disabled = false;
+            // Restaurar texto original do botão
+            setTimeout(() => {
+                if (button.querySelector('.fa-spin')) {
+                    button.innerHTML = button.innerHTML.replace(/<i class="fas fa-spinner fa-spin me-2"><\/i>Processando\.\.\./, 
+                        button.dataset.originalText || button.innerHTML);
+                }
+            }, 1000);
+        }
+    }
+
+    // Atualizar status da conexão
+    async function refreshStatus() {
+        try {
+            const response = await fetch(routes.status);
+            const data = await response.json();
+            
+            if (data.success) {
+                const status = data.data;
+                
+                // Atualizar badge
+                connectionBadge.innerHTML = status.connected 
+                    ? '<span class="badge bg-success"><i class="fas fa-check-circle me-1"></i>Conectado</span>'
+                    : '<span class="badge bg-danger"><i class="fas fa-times-circle me-1"></i>Desconectado</span>';
+                
+                // Atualizar mensagem
+                statusMessage.className = `alert ${status.connected ? 'alert-success' : 'alert-info'} mb-3`;
+                statusMessage.innerHTML = `<i class="fas fa-info-circle me-2"></i>${status.message}`;
+                
+                // Atualizar botões
+                btnDisconnect.disabled = !status.connected;
+                document.querySelector('#test-message-form button[type="submit"]').disabled = !status.connected;
+                
+                // Limpar QR code se conectado
+                if (status.connected && qrcodeContainer.querySelector('.qr-code-display')) {
+                    qrcodeContainer.innerHTML = `
+                        <div class="alert alert-success">
+                            <i class="fas fa-check-circle me-2"></i>
+                            Dispositivo conectado com sucesso!
+                        </div>
+                    `;
+                }
+            }
+        } catch (error) {
+            console.error('Erro ao atualizar status:', error);
+        }
+    }
+
+    // Auto-refresh do status a cada 30 segundos
+    setInterval(refreshStatus, 30000);
+});
+</script>
+@endpush
+
+@endsection 

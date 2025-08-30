@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Chat - Indicador de Digitação</title>
+    <meta name="csrf-token" content="test-token">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .test-button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        
+        .test-button:hover {
+            background: #0056b3;
+        }
+        
+        .chat-typing {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin: 10px 15px;
+            border: 1px solid #e9ecef;
+        }
+
+        .typing-indicator {
+            display: flex;
+            gap: 4px;
+        }
+
+        .typing-indicator span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #007bff;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+
+        .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+        .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes typing {
+            0%, 80%, 100% {
+                transform: scale(0.8);
+                opacity: 0.5;
+            }
+            40% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .typing-text {
+            font-size: 13px;
+            color: #495057;
+            font-weight: 500;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 Teste do Indicador de Digitação do Chat</h1>
+        
+        <p>Esta página testa o indicador de digitação do chat.</p>
+        
+        <button class="test-button" onclick="testShowTyping()">Mostrar "Digitando..."</button>
+        <button class="test-button" onclick="testHideTyping()">Ocultar "Digitando..."</button>
+        <button class="test-button" onclick="testSimulateChat()">Simular Chat Completo</button>
+        
+        <div id="chat-typing" class="chat-typing hidden">
+            <div class="typing-indicator">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <span class="typing-text">Digitando...</span>
+        </div>
+        
+        <div id="chat-messages" style="margin-top: 20px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+            <h3>Mensagens do Chat:</h3>
+            <div id="messages-list"></div>
+        </div>
+    </div>
+
+    <script>
+        function showTyping(show) {
+            const typingIndicator = document.getElementById('chat-typing');
+            console.log('showTyping:', show);
+            typingIndicator.style.display = show ? 'flex' : 'none';
+        }
+        
+        function testShowTyping() {
+            showTyping(true);
+        }
+        
+        function testHideTyping() {
+            showTyping(false);
+        }
+        
+        function addMessage(content, role) {
+            const messagesList = document.getElementById('messages-list');
+            const messageDiv = document.createElement('div');
+            messageDiv.style.cssText = `
+                margin: 10px 0;
+                padding: 10px;
+                background: ${role === 'user' ? '#e3f2fd' : '#f3e5f5'};
+                border-radius: 8px;
+                border-left: 4px solid ${role === 'user' ? '#2196f3' : '#9c27b0'};
+            `;
+            messageDiv.innerHTML = `
+                <strong>${role === 'user' ? '👤 Usuário' : '🤖 Assistente'}:</strong> ${content}
+            `;
+            messagesList.appendChild(messageDiv);
+        }
+        
+        async function testSimulateChat() {
+            // Simular mensagem do usuário
+            addMessage('Olá, preciso de ajuda com segunda via de boleto', 'user');
+            
+            // Mostrar "Digitando..."
+            showTyping(true);
+            
+            // Simular delay da API
+            setTimeout(async () => {
+                // Ocultar "Digitando..."
+                showTyping(false);
+                
+                // Simular resposta da API
+                const response = '🔗 **Segunda via do boleto:** [CLIQUE AQUI](https://exemplo.com/boleto)';
+                addMessage(response, 'assistant');
+            }, 2000); // 2 segundos de delay
+        }
+    </script>
+</body>
+</html>

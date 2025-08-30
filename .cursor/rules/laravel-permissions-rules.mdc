@@ -1,0 +1,118 @@
+---
+alwaysApply: true
+---
+
+# permissions-system.mdc
+
+title: Análise de Sistema de Permissões – Laravel Project
+
+## LOCALIZAÇÃO
+
+- Projeto base: `/var/www/html/main-file`
+
+## OBJETIVO
+
+- Identificar e entender todas as regras de permissões e controle de acesso.
+- Verificar onde estão definidos:
+  - Gates (`Gate::define`)
+  - Policies (`php artisan make:policy`)
+  - Middlewares (`can`, `auth`, `role`, etc.)
+  - Traits de permissões (ex: `HasPermissions`)
+  - Roles & Permissions (ex: Spatie ou solução própria)
+
+## VERIFICAÇÕES SUGERIDAS
+
+- Procurar arquivos:
+  - `app/Policies/`
+  - `app/Providers/AuthServiceProvider.php`
+  - `routes/web.php` e `routes/api.php`
+  - Middleware em `app/Http/Middleware/`
+  - Módulos com controle via `@can`, `@role`, `@permission`
+  - Traits como `HasRoles`, `HasPermissions`, ou similares
+  - Uso de pacotes como `spatie/laravel-permission`
+  - Chamadas como:
+    - `Gate::authorize()`
+    - `Auth::user()->can(...)`
+    - `Gate::allows(...)`
+
+## REGRAS
+
+- Cada permissão deve estar:
+  - Definida por nome claro e padronizado
+  - Relacionada a uma role ou policy
+- Validar que:
+  - Toda rota protegida tenha `middleware` adequado
+  - Policies estejam registradas no `AuthServiceProvider`
+  - Controllers use corretamente `authorize()` ou `this->authorizeResource()`
+
+## SEGURANÇA
+
+- Verificar permissões expostas em `api.php` sem proteção adequada
+- Validar se roles estão sendo forjadas via request ou form
+
+## EXTRA
+
+- Checar se o sistema possui:
+  - Painel de gerenciamento de permissões
+  - Seeder com permissões e roles
+  - Relações com tabelas `users`, `roles`, `permissions`, `model_has_roles`, etc.
+  - Componentes Blade protegidos com `@can`, `@role`, `@hasanyrole`, etc.
+
+# FIM
+# permissions-system.mdc
+
+title: Análise de Sistema de Permissões – Laravel Project
+
+## LOCALIZAÇÃO
+
+- Projeto base: `/var/www/html/main-file`
+
+## OBJETIVO
+
+- Identificar e entender todas as regras de permissões e controle de acesso.
+- Verificar onde estão definidos:
+  - Gates (`Gate::define`)
+  - Policies (`php artisan make:policy`)
+  - Middlewares (`can`, `auth`, `role`, etc.)
+  - Traits de permissões (ex: `HasPermissions`)
+  - Roles & Permissions (ex: Spatie ou solução própria)
+
+## VERIFICAÇÕES SUGERIDAS
+
+- Procurar arquivos:
+  - `app/Policies/`
+  - `app/Providers/AuthServiceProvider.php`
+  - `routes/web.php` e `routes/api.php`
+  - Middleware em `app/Http/Middleware/`
+  - Módulos com controle via `@can`, `@role`, `@permission`
+  - Traits como `HasRoles`, `HasPermissions`, ou similares
+  - Uso de pacotes como `spatie/laravel-permission`
+  - Chamadas como:
+    - `Gate::authorize()`
+    - `Auth::user()->can(...)`
+    - `Gate::allows(...)`
+
+## REGRAS
+
+- Cada permissão deve estar:
+  - Definida por nome claro e padronizado
+  - Relacionada a uma role ou policy
+- Validar que:
+  - Toda rota protegida tenha `middleware` adequado
+  - Policies estejam registradas no `AuthServiceProvider`
+  - Controllers use corretamente `authorize()` ou `this->authorizeResource()`
+
+## SEGURANÇA
+
+- Verificar permissões expostas em `api.php` sem proteção adequada
+- Validar se roles estão sendo forjadas via request ou form
+
+## EXTRA
+
+- Checar se o sistema possui:
+  - Painel de gerenciamento de permissões
+  - Seeder com permissões e roles
+  - Relações com tabelas `users`, `roles`, `permissions`, `model_has_roles`, etc.
+  - Componentes Blade protegidos com `@can`, `@role`, `@hasanyrole`, etc.
+
+# FIM

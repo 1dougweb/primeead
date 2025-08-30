@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste API Chat</title>
+    <meta name="csrf-token" content="test-token">
+</head>
+<body>
+    <h1>🧪 Teste da API do Chat</h1>
+    
+    <button onclick="testAPI()">Testar API</button>
+    <button onclick="testFetch()">Testar Fetch</button>
+    
+    <div id="result" style="margin-top: 20px; padding: 20px; background: #f0f0f0; border-radius: 8px;"></div>
+
+    <script>
+        function testAPI() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Testando API...';
+            
+            const apiUrl = window.location.origin + '/api/chat/process-message';
+            console.log('URL da API:', apiUrl);
+            
+            fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': 'test-token'
+                },
+                body: JSON.stringify({
+                    message: 'teste',
+                    session_id: 'test_123',
+                    user_email: 'test@test.com',
+                    user_name: null
+                })
+            })
+            .then(response => {
+                console.log('Response status:', response.status);
+                console.log('Response headers:', response.headers);
+                return response.json();
+            })
+            .then(data => {
+                console.log('Response data:', data);
+                resultDiv.innerHTML = '<h3>✅ API Funcionando!</h3><pre>' + JSON.stringify(data, null, 2) + '</pre>';
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                resultDiv.innerHTML = '<h3>❌ Erro na API</h3><p>Erro: ' + error.message + '</p><p>Tipo: ' + error.name + '</p>';
+            });
+        }
+        
+        function testFetch() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Testando fetch básico...';
+            
+            fetch('https://httpbin.org/get')
+            .then(response => response.json())
+            .then(data => {
+                resultDiv.innerHTML = '<h3>✅ Fetch Funcionando!</h3><pre>' + JSON.stringify(data, null, 2) + '</pre>';
+            })
+            .catch(error => {
+                resultDiv.innerHTML = '<h3>❌ Erro no Fetch</h3><p>Erro: ' + error.message + '</p>';
+            });
+        }
+    </script>
+</body>
+</html>

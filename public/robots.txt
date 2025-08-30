@@ -1,0 +1,46 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ensinocerto.com.br/sitemap.xml
+
+# Páginas importantes para indexação
+Allow: /eja-supletivo
+Allow: /politica-privacidade
+Allow: /dashboard
+
+# Bloquear páginas administrativas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /storage/
+Disallow: /vendor/
+Disallow: /node_modules/
+
+# Bloquear arquivos sensíveis
+Disallow: /*.env
+Disallow: /*.log
+Disallow: /*.sql
+Disallow: /*.zip
+Disallow: /*.tar.gz
+
+# Crawl-delay para respeitar o servidor
+Crawl-delay: 1
+
+# Diretrizes específicas para IA e motores de busca
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1

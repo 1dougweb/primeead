@@ -1,0 +1,123 @@
+---
+alwaysApply: true
+---
+
+# mercado-pago-pix.mdc
+
+title: Regras de Integração – Mercado Pago Pix (Checkout Transparente)
+
+## FRONTEND
+
+- Criar formulário com os campos:
+  - payerFirstName, payerLastName, email
+  - identificationType, identificationNumber
+- Obter os tipos de documento dinamicamente com `mp.getIdentificationTypes()`
+- Definir `payment_method_id = "pix"` no envio do pagamento
+
+## BACKEND
+
+- Endpoint de criação da ordem: `POST /v1/orders`
+- Headers obrigatórios:
+  - Authorization: Bearer {ACCESS_TOKEN}
+  - X-Idempotency-Key: valor único (UUID)
+- Parâmetros obrigatórios no body:
+  - type: "online"
+  - total_amount: valor total
+  - external_reference: string única da transação
+  - processing_mode: "automatic" ou "manual"
+  - payer.email: e-mail do comprador
+  - transactions.payments:
+    - payment_method.id: "pix"
+    - payment_method.type: "bank_transfer"
+    - expiration_time (opcional): formato ISO 8601 (ex: P1D para 1 dia)
+
+## RESPOSTA E USO DO PIX
+
+- Capturar da resposta:
+  - `ticket_url`: link com QR code Pix e instruções
+  - `qr_code`: código Pix Copia e Cola
+  - `qr_code_base64`: imagem do QR Code em Base64
+- Renderizar no frontend:
+  - Exibir imagem `<img src="data:image/jpeg;base64,${qr_code_base64}" />`
+  - Adicionar campo para copiar `qr_code` como Pix Copia e Cola
+  - Ou exibir botão com `ticket_url` como link
+
+## STATUS / WEBHOOKS
+
+- Monitorar os status: `action_required`, `waiting_payment`, `approved`, `cancelled`, `expired`
+- Implementar Webhooks para:
+  - `order.updated` e `payment.updated`
+
+## CANCELAMENTO
+
+- Pagamentos Pix com status `action_required` podem ser cancelados.
+- Após 30 dias, o Pix expira e o status muda para `expired`.
+
+## TESTES
+
+- Usar ambiente sandbox com:
+  - E-mail de teste: test_user_{RANDOM}@testuser.com
+  - CPF: 19119119100
+- Simular pagamento e conferir `qr_code_base64` e `ticket_url`
+
+# acesse a documentação para PIX
+https://www.mercadopago.com.br/developers/en/docs/checkout-api-v2/payment-integration/pix# mercado-pago-pix.mdc
+
+title: Regras de Integração – Mercado Pago Pix (Checkout Transparente)
+
+## FRONTEND
+
+- Criar formulário com os campos:
+  - payerFirstName, payerLastName, email
+  - identificationType, identificationNumber
+- Obter os tipos de documento dinamicamente com `mp.getIdentificationTypes()`
+- Definir `payment_method_id = "pix"` no envio do pagamento
+
+## BACKEND
+
+- Endpoint de criação da ordem: `POST /v1/orders`
+- Headers obrigatórios:
+  - Authorization: Bearer {ACCESS_TOKEN}
+  - X-Idempotency-Key: valor único (UUID)
+- Parâmetros obrigatórios no body:
+  - type: "online"
+  - total_amount: valor total
+  - external_reference: string única da transação
+  - processing_mode: "automatic" ou "manual"
+  - payer.email: e-mail do comprador
+  - transactions.payments:
+    - payment_method.id: "pix"
+    - payment_method.type: "bank_transfer"
+    - expiration_time (opcional): formato ISO 8601 (ex: P1D para 1 dia)
+
+## RESPOSTA E USO DO PIX
+
+- Capturar da resposta:
+  - `ticket_url`: link com QR code Pix e instruções
+  - `qr_code`: código Pix Copia e Cola
+  - `qr_code_base64`: imagem do QR Code em Base64
+- Renderizar no frontend:
+  - Exibir imagem `<img src="data:image/jpeg;base64,${qr_code_base64}" />`
+  - Adicionar campo para copiar `qr_code` como Pix Copia e Cola
+  - Ou exibir botão com `ticket_url` como link
+
+## STATUS / WEBHOOKS
+
+- Monitorar os status: `action_required`, `waiting_payment`, `approved`, `cancelled`, `expired`
+- Implementar Webhooks para:
+  - `order.updated` e `payment.updated`
+
+## CANCELAMENTO
+
+- Pagamentos Pix com status `action_required` podem ser cancelados.
+- Após 30 dias, o Pix expira e o status muda para `expired`.
+
+## TESTES
+
+- Usar ambiente sandbox com:
+  - E-mail de teste: test_user_{RANDOM}@testuser.com
+  - CPF: 19119119100
+- Simular pagamento e conferir `qr_code_base64` e `ticket_url`
+
+# acesse a documentação para PIX
+https://www.mercadopago.com.br/developers/en/docs/checkout-api-v2/payment-integration/pix

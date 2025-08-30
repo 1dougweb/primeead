@@ -1,0 +1,127 @@
+---
+alwaysApply: true
+---
+
+# mercado-pago-boleto.mdc
+
+title: Regras de Integração – Mercado Pago Boleto (Checkout Transparente)
+
+## FRONTEND
+
+- O formulário de pagamento deve conter os seguintes campos obrigatórios:
+  - zip_code, street_name, street_number, neighborhood, city, state
+  - payerFirstName, payerLastName, email
+  - identificationType, identificationNumber
+- Validar preenchimento obrigatório de todos os campos.
+- Obter os tipos de documento via `mp.getIdentificationTypes()` e preencher o select de forma dinâmica.
+
+## BACKEND
+
+- Requisição de pagamento deve ser feita para o endpoint: `POST /v1/orders`.
+- Incluir no header:
+  - Authorization: `Bearer {ACCESS_TOKEN}`
+  - X-Idempotency-Key: valor único (UUID)
+- Incluir no body:
+  - type: `"online"`
+  - processing_mode: `"automatic"` ou `"manual"`
+  - external_reference: identificador interno único
+  - total_amount: valor da transação
+  - description: descrição da compra
+  - payer: dados completos (email, nome, documento e endereço)
+  - transactions.payments:
+    - payment_method.id: `"boleto"`
+    - payment_method.type: `"ticket"`
+    - expiration_time (opcional): prazo no formato ISO 8601 (`P3D` para 3 dias)
+
+## PDF E LINK DO BOLETO
+
+- Após criar a ordem, capturar:
+  - ticket_url: URL do boleto em PDF
+  - digitable_line: linha digitável
+  - barcode_content: código de barras
+  - financial_institution: banco emissor
+- Exibir o `ticket_url` ao cliente para imprimir ou pagar online.
+
+## STATUS / WEBHOOKS
+
+- Monitorar status da transação:
+  - action_required, waiting_payment, approved, cancelled, expired
+- Implementar Webhooks para:
+  - payment.updated, order.updated
+- Validar o retorno de status após pagamento (normalmente em até 72h úteis).
+
+## CANCELAMENTO
+
+- Pagamentos com status `action_required` podem ser cancelados.
+- Após vencimento +30 dias, o boleto é considerado `expired` e não pode mais ser cancelado.
+
+## TESTES
+
+- Usar dados de sandbox:
+  - CPF de teste: 19119119100
+  - Email de teste: test_user_{RANDOM}@testuser.com
+- Sempre validar boleto em ambiente sandbox antes de ir para produção.
+
+# FIM
+# mercado-pago-boleto.mdc
+
+title: Regras de Integração – Mercado Pago Boleto (Checkout Transparente)
+
+## FRONTEND
+
+- O formulário de pagamento deve conter os seguintes campos obrigatórios:
+  - zip_code, street_name, street_number, neighborhood, city, state
+  - payerFirstName, payerLastName, email
+  - identificationType, identificationNumber
+- Validar preenchimento obrigatório de todos os campos.
+- Obter os tipos de documento via `mp.getIdentificationTypes()` e preencher o select de forma dinâmica.
+
+## BACKEND
+
+- Requisição de pagamento deve ser feita para o endpoint: `POST /v1/orders`.
+- Incluir no header:
+  - Authorization: `Bearer {ACCESS_TOKEN}`
+  - X-Idempotency-Key: valor único (UUID)
+- Incluir no body:
+  - type: `"online"`
+  - processing_mode: `"automatic"` ou `"manual"`
+  - external_reference: identificador interno único
+  - total_amount: valor da transação
+  - description: descrição da compra
+  - payer: dados completos (email, nome, documento e endereço)
+  - transactions.payments:
+    - payment_method.id: `"boleto"`
+    - payment_method.type: `"ticket"`
+    - expiration_time (opcional): prazo no formato ISO 8601 (`P3D` para 3 dias)
+
+## PDF E LINK DO BOLETO
+
+- Após criar a ordem, capturar:
+  - ticket_url: URL do boleto em PDF
+  - digitable_line: linha digitável
+  - barcode_content: código de barras
+  - financial_institution: banco emissor
+- Exibir o `ticket_url` ao cliente para imprimir ou pagar online.
+
+## STATUS / WEBHOOKS
+
+- Monitorar status da transação:
+  - action_required, waiting_payment, approved, cancelled, expired
+- Implementar Webhooks para:
+  - payment.updated, order.updated
+- Validar o retorno de status após pagamento (normalmente em até 72h úteis).
+
+## CANCELAMENTO
+
+- Pagamentos com status `action_required` podem ser cancelados.
+- Após vencimento +30 dias, o boleto é considerado `expired` e não pode mais ser cancelado.
+
+## TESTES
+
+- Usar dados de sandbox:
+  - CPF de teste: 19119119100
+  - Email de teste: test_user_{RANDOM}@testuser.com
+- Sempre validar boleto em ambiente sandbox antes de ir para produção.
+
+# acesse a documentação para boletos
+https://www.mercadopago.com.br/developers/en/docs/checkout-api-v2/payment-integration/boleto
