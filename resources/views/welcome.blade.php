@@ -489,8 +489,7 @@
         <div class="hero-content container">
             <div class="hero-text">
                 <div class="logo">
-                    <img src="{{ asset('assets/images/anhangue-vip.svg') }}" alt="Logo Anhanguera VIP">
-                    <img src="{{ asset('assets/images/logotipo-dark.svg') }}" alt="Logo Educa Prime">
+                    <img src="{{ asset('assets/images/logo.svg') }}" alt="Logo Educa Prime">
                 </div>
                 <div class="cta-buttons">
                     <button class="cta-button"><i class="fas fa-thumbs-up"></i> Conquiste seu emprego</button>
