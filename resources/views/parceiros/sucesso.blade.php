@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cadastro Realizado | Ensino Certo</title>
+    <title>Cadastro Realizado | Educa Prime</title>
     <meta name="description" content="Seu cadastro como polo parceiro foi realizado com sucesso">
     
     <!-- CSS -->
@@ -60,7 +60,7 @@
         
         .success-title {
             font-size: 2.8rem;
-            color: #0d47a1;
+            color: #0B9950;
             margin-bottom: 20px;
             font-weight: 700;
         }
@@ -88,7 +88,7 @@
         }
         
         .next-steps h3 {
-            color: #0d47a1;
+            color: #0B9950;
             font-size: 1.5rem;
             margin-bottom: 25px;
             text-align: center;
@@ -131,7 +131,7 @@
         }
         
         .important-info {
-            background: linear-gradient(135deg, #1e88e5, #0d47a1);
+            background: linear-gradient(135deg, #1e88e5, #0B9950);
             color: white;
             padding: 30px;
             border-radius: 15px;
@@ -190,7 +190,7 @@
         }
         
         .contact-item h4 {
-            color: #0d47a1;
+            color: #0B9950;
             margin-bottom: 10px;
             font-size: 1.1rem;
         }
@@ -202,7 +202,7 @@
         }
         
         .btn-home {
-            background: linear-gradient(135deg, #1e88e5, #0d47a1);
+            background: linear-gradient(135deg, #1e88e5, #0B9950);
             color: white;
             padding: 18px 40px;
             border: none;
@@ -254,7 +254,7 @@
             </div>
             
             <h1 class="success-title">🎉 Cadastro Realizado!</h1>
-            <p class="success-subtitle">Bem-vindo à família Ensino Certo!</p>
+            <p class="success-subtitle">Bem-vindo à família Educa Prime!</p>
             
             <p class="success-message">
                 Obrigado por se cadastrar como nosso parceiro! Seu cadastro foi recebido com sucesso e nossa equipe comercial entrará em contato em breve para dar início à nossa parceria.
@@ -285,7 +285,7 @@
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
                     <h4>Email</h4>
-                    <p>comercial@ensinocerto.com.br</p>
+                    <p>comercial@primeead.com.br</p>
                 </div>
                 
                 <div class="contact-item">

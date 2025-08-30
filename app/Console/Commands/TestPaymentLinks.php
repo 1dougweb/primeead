@@ -27,7 +27,7 @@ class TestPaymentLinks extends Command
      */
     public function handle(): int
     {
-        $email = $this->argument('email') ?? 'contato@ensinocerto.com.br';
+        $email = $this->argument('email') ?? 'contato@primeead.com.br';
         
         $this->info('🧪 Testando funcionalidade de links de pagamento...');
         $this->info("📧 Email: {$email}");

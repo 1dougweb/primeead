@@ -5,17 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- SEO Essentials -->
-    <title>Eja Supletivo - Ensino Certo</title>
+    <title>Eja Supletivo - Educa Prime</title>
     <meta name="description" content="Conclua o Ensino Médio com o EJA Supletivo! Estude online ou presencial, com certificado válido em todo o Brasil. Rápido, fácil e reconhecido pelo MEC.">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:locale" content="pt_BR">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Eja Supletivo - Ensino Certo">
+    <meta property="og:title" content="Eja Supletivo - Educa Prime">
     <meta property="og:description" content="Conclua o Ensino Médio com o EJA Supletivo! Estude online ou presencial, com certificado válido em todo o Brasil. Rápido, fácil e reconhecido pelo MEC.">
-    <meta property="og:url" content="https://ensinocerto.com.br/eja-supletivo/">
-    <meta property="og:site_name" content="Ensino Certo">
+    <meta property="og:url" content="https://primeead.com.br/eja-supletivo/">
+    <meta property="og:site_name" content="Educa Prime">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
@@ -23,7 +23,7 @@
     <meta name="twitter:data1" content="20 minutos">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://ensinocerto.com.br/eja-supletivo/">
+    <link rel="canonical" href="https://primeead.com.br/eja-supletivo/">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -350,9 +350,9 @@
     {
         "@context": "https://schema.org",
         "@type": "EducationalOrganization",
-        "name": "Ensino Certo",
+        "name": "Educa Prime",
         "description": "Instituição de ensino especializada em EJA Supletivo online com certificado reconhecido pelo MEC",
-        "url": "https://ensinocerto.com.br",
+        "url": "https://primeead.com.br",
         "logo": "{{ asset('assets/images/logotipo-dark.svg') }}",
         "address": {
             "@type": "PostalAddress",
@@ -490,7 +490,7 @@
             <div class="hero-text">
                 <div class="logo">
                     <img src="{{ asset('assets/images/anhangue-vip.svg') }}" alt="Logo Anhanguera VIP">
-                    <img src="{{ asset('assets/images/logotipo-dark.svg') }}" alt="Logo Ensino Certo">
+                    <img src="{{ asset('assets/images/logotipo-dark.svg') }}" alt="Logo Educa Prime">
                 </div>
                 <div class="cta-buttons">
                     <button class="cta-button"><i class="fas fa-thumbs-up"></i> Conquiste seu emprego</button>
@@ -627,7 +627,7 @@
                         </div>
                         <div class="benefit-content">
                             <h3>Certificado garantido</h3>
-                            <p>Na Ensino Certo você tem garantia de certificado reconhecido pelo MEC</p>
+                            <p>Na Educa Prime você tem garantia de certificado reconhecido pelo MEC</p>
                         </div>
                     </div>
                 </div>
@@ -714,7 +714,7 @@
                     
                     <div class="prazo-info">
                         <h3>6 meses</h3>
-                        <p>Após a conclusão do curso é o prazo máximo para conquistar seu certificado com a ajuda do Programa de Ensino Certo.</p>
+                        <p>Após a conclusão do curso é o prazo máximo para conquistar seu certificado com a ajuda do Programa de Educa Prime.</p>
                     </div>
                 </div>
                 
@@ -924,7 +924,7 @@
                     <div class="faq-item">
                         <div class="faq-question">
                             <i class="fas fa-user-graduate"></i>
-                            <span>Qual a idade mínima para estudar na Ensino Certo?</span>
+                            <span>Qual a idade mínima para estudar na Educa Prime?</span>
                             <i class="fas fa-chevron-down faq-arrow"></i>
                         </div>
                         <div class="faq-answer">

@@ -137,7 +137,7 @@ class BoletoSecondViaService
         
         // Dados do pagador
         $payer = [
-            'email' => $payment->matricula->email ?? 'contato@ensinocerto.com.br',
+            'email' => $payment->matricula->email ?? 'contato@primeead.com.br',
             'first_name' => $payment->matricula->nome_completo ?? 'Aluno',
             'last_name' => '',
             'identification' => [

@@ -399,7 +399,7 @@
     }
 
     .badge.bg-purple {
-        background-color: #6f42c1 !important;
+        background-color: #0B9950 !important;
     }
 
     .badge.bg-orange {

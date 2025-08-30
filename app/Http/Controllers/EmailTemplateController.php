@@ -329,7 +329,7 @@ class EmailTemplateController extends Controller
                     ],
                     'settings' => [
                         'contact_phone' => '(11) 1234-5678',
-                        'contact_email' => 'contato@ensinocerto.com.br',
+                        'contact_email' => 'contato@primeead.com.br',
                         'contact_hours' => 'Seg-Sex: 8h às 18h'
                     ]
                 ];
@@ -357,7 +357,7 @@ class EmailTemplateController extends Controller
                     ],
                     'settings' => [
                         'contact_phone' => '(11) 1234-5678',
-                        'contact_email' => 'contato@ensinocerto.com.br',
+                        'contact_email' => 'contato@primeead.com.br',
                         'contact_hours' => 'Seg-Sex: 8h às 18h'
                     ]
                 ];

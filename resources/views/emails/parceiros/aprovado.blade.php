@@ -49,7 +49,7 @@
     
     <div style="background-color: #f8f9fa; padding: 15px; border-radius: 6px; margin: 15px 0;">
         <p style="margin: 0; color: #495057; line-height: 1.6;">
-            <strong>Bem-vindo à família Ensino Certo!</strong> Agora você faz parte da nossa rede de parceiros comprometidos com a educação de qualidade.
+            <strong>Bem-vindo à família Educa Prime!</strong> Agora você faz parte da nossa rede de parceiros comprometidos com a educação de qualidade.
         </p>
     </div>
 
@@ -108,7 +108,7 @@
     </div>
 </div>
 
-<div style="background-color: #ffffff; padding: 20px; border-radius: 8px; border-left: 4px solid #6f42c1; margin-top: 20px;">
+<div style="background-color: #ffffff; padding: 20px; border-radius: 8px; border-left: 4px solid #0B9950; margin-top: 20px;">
     <h3 style="color: #333; margin-top: 0;">📞 Entre em Contato</h3>
     
     <p style="color: #495057; margin-bottom: 15px;">
@@ -117,7 +117,7 @@
     
     <div style="background-color: #f8f9fa; padding: 15px; border-radius: 6px;">
         <p style="margin: 5px 0; color: #495057;">
-            <strong>📧 Email:</strong> <a href="mailto:parceiros@ensinocerto.com.br" style="color: #007bff; text-decoration: none;">parceiros@ensinocerto.com.br</a>
+            <strong>📧 Email:</strong> <a href="mailto:parceiros@primeead.com.br" style="color: #007bff; text-decoration: none;">parceiros@primeead.com.br</a>
         </p>
         <p style="margin: 5px 0; color: #495057;">
             <strong>📱 WhatsApp:</strong> <a href="https://wa.me/5511999999999" style="color: #25d366; text-decoration: none;">(11) 99999-9999</a>
@@ -129,7 +129,7 @@
 </div>
 
 <div style="margin-top: 30px; padding: 20px; background-color: #e9ecef; border-radius: 8px; text-align: center;">
-    <h3 style="color: #495057; margin-top: 0;">🌟 Bem-vindo à Ensino Certo!</h3>
+    <h3 style="color: #495057; margin-top: 0;">🌟 Bem-vindo à Educa Prime!</h3>
     <p style="margin: 0; color: #6c757d; font-size: 16px; line-height: 1.6;">
         Juntos, vamos transformar vidas através da educação de qualidade.<br>
         <strong>Muito obrigado por fazer parte da nossa missão!</strong>

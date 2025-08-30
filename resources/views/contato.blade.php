@@ -5,17 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- SEO Essentials -->
-    <title>Fale Conosco - Ensino Certo</title>
-    <meta name="description" content="Entre em contato com o Ensino Certo. Tire suas dúvidas sobre nossos cursos EJA, horários de atendimento e muito mais. Estamos aqui para ajudar!">
+    <title>Fale Conosco - Educa Prime</title>
+    <meta name="description" content="Entre em contato com o Educa Prime. Tire suas dúvidas sobre nossos cursos EJA, horários de atendimento e muito mais. Estamos aqui para ajudar!">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:locale" content="pt_BR">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Fale Conosco - Ensino Certo">
-    <meta property="og:description" content="Entre em contato com o Ensino Certo. Tire suas dúvidas sobre nossos cursos EJA, horários de atendimento e muito mais. Estamos aqui para ajudar!">
-    <meta property="og:url" content="https://ensinocerto.com.br/contato/">
-    <meta property="og:site_name" content="Ensino Certo">
+    <meta property="og:title" content="Fale Conosco - Educa Prime">
+    <meta property="og:description" content="Entre em contato com o Educa Prime. Tire suas dúvidas sobre nossos cursos EJA, horários de atendimento e muito mais. Estamos aqui para ajudar!">
+    <meta property="og:url" content="https://primeead.com.br/contato/">
+    <meta property="og:site_name" content="Educa Prime">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
@@ -23,7 +23,7 @@
     <meta name="twitter:data1" content="5 minutos">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://ensinocerto.com.br/contato/">
+    <link rel="canonical" href="https://primeead.com.br/contato/">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -92,7 +92,7 @@
             <div class="hero-text">
                 <div class="logo">
                     <img src="{{ asset('assets/images/anhangue-vip.svg') }}" alt="Logo Anhanguera VIP">
-                    <img src="{{ asset('assets/images/logotipo-dark.svg') }}" alt="Logo Ensino Certo">
+                    <img src="{{ asset('assets/images/logotipo-dark.svg') }}" alt="Logo Educa Prime">
                 </div>
                 
                 <h1>Entre em contato conosco</h1>
@@ -237,9 +237,9 @@
                     </div>
                     <div class="contact-card-content">
                         <h3>Email</h3>
-                        <p class="contact-number">contato@ensinocerto.com.br</p>
+                        <p class="contact-number">contato@primeead.com.br</p>
                         <p class="contact-description">Resposta em até 24h</p>
-                        <a href="mailto:contato@ensinocerto.com.br?subject=Informações sobre EJA" class="btn-contact email-btn">
+                        <a href="mailto:contato@primeead.com.br?subject=Informações sobre EJA" class="btn-contact email-btn">
                             <i class="fas fa-envelope"></i>
                             Enviar email
                         </a>

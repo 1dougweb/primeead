@@ -30,7 +30,7 @@ class ParceiroRejeitadoMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Sobre sua candidatura - Ensino Certo',
+            subject: 'Sobre sua candidatura - Educa Prime',
         );
     }
 

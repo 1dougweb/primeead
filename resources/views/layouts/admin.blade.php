@@ -38,7 +38,7 @@
             --sidebar-collapsed-width: 0;
             --transition-speed: 0.35s;
             --transition-curve: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-            --sidebar-color: #5a2d91!important;
+            --sidebar-color: #0B9950!important;
             --sidebar-hover: #3a3a7c;
             --sidebar-color: {{ $currentTheme['primary_color'] ?? '#4a4a9c' }};
             --sidebar-hover:#3A5998;
@@ -174,7 +174,7 @@
         }
         
         .stats-card {
-            background: linear-gradient(135deg, #6f42c1 0%, #5a2d91 100%);
+            background: linear-gradient(135deg, #0B9950 0%, #0B9950 100%);
             color: white;
         }
         
@@ -194,13 +194,13 @@
         }
         
         .btn-primary {
-            background: #6f42c1;
-            border-color: #6f42c1;
+            background: #0B9950;
+            border-color: #0B9950;
         }
         
         .btn-primary:hover {
-            background: #5a2d91;
-            border-color: #5a2d91;
+            background: #0B9950;
+            border-color: #0B9950;
         }
         
         .table th {
@@ -223,7 +223,7 @@
             width: 40px !important;
             height: 40px !important;
             border-radius: 50% !important;
-            background: #5a2d91 !important;
+            background: #0B9950 !important;
             color: white !important;
             display: flex !important;
             align-items: center !important;
@@ -769,7 +769,7 @@
                 <div class="position-sticky pt-4">
                     <div class="sidebar-header px-3 mb-4">
                         @php
-                            $sidebarLogoPath = \App\Models\SystemSetting::get('sidebar_logo_path', '/assets/images/logotipo-dark.svg');
+                            $sidebarLogoPath = \App\Models\SystemSetting::get('sidebar_logo_path', '/assets/images/logo.svg');
                         @endphp
                         
                         <!-- Logo - sempre exibir a imagem -->
@@ -1050,7 +1050,7 @@
                                     <i class="fas fa-code-branch me-1"></i> v1.0.4
                                 </div>
                                 <div class="copyright small text-white-50">
-                                    &copy; {{ date('Y') }} Ensino Certo
+                                    &copy; {{ date('Y') }} Educa Prime
                                 </div>
                             </div>
                             
@@ -1218,7 +1218,7 @@
                 
                 <!-- Footer -->
                 <footer class="pb-2 text-center text-muted border-top pt-3 mt-5">
-                    <small>&copy; {{ date('Y') }} Ensino Certo. Todos os direitos reservados.</small>
+                    <small>&copy; {{ date('Y') }} Educa Prime. Todos os direitos reservados.</small>
                 </footer>
             </main>
         </div>

@@ -514,21 +514,21 @@
     border-radius: 8px;
     margin: 0 0.1rem;
     border: 1px solid #dee2e6;
-    color: #6f42c1;
+    color: #0B9950;
     padding: 0.5rem 0.75rem;
     transition: all 0.2s ease;
 }
 
 .page-link:hover {
     color: #ffffff;
-    background-color: #6f42c1;
-    border-color: #6f42c1;
+    background-color: #0B9950;
+    border-color: #0B9950;
     transform: translateY(-1px);
 }
 
 .page-item.active .page-link {
-    background-color: #6f42c1;
-    border-color: #6f42c1;
+    background-color: #0B9950;
+    border-color: #0B9950;
     color: white;
     font-weight: 600;
 }

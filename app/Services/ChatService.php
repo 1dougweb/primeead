@@ -547,8 +547,8 @@ class ChatService
     protected function getSystemInfo(): array
     {
         return [
-            'company_name' => 'Ensino Certo',
-            'support_email' => SystemSetting::get('mail_from_address', 'contato@ensinocerto.com.br'),
+            'company_name' => 'Educa Prime',
+            'support_email' => SystemSetting::get('mail_from_address', 'contato@primeead.com.br'),
             'support_phone' => SystemSetting::get('thank_you_contact_phone', ''),
             'business_hours' => SystemSetting::get('thank_you_contact_hours', 'Segunda a Sexta, 8h às 18h'),
             'website' => config('app.url'),
@@ -669,11 +669,11 @@ class ChatService
         }
         
         $basePrompt .= "\n\nINFORMAÇÕES DA INSTITUIÇÃO:\n";
-        $basePrompt .= "- Nome: Ensino Certo\n";
-        $basePrompt .= "- Email de suporte: contato@ensinocerto.com.br\n";
+        $basePrompt .= "- Nome: Educa Prime\n";
+        $basePrompt .= "- Email de suporte: contato@primeead.com.br\n";
         $basePrompt .= "- Telefone: (11) 91701-2033\n";
         $basePrompt .= "- Horário de atendimento: Segunda a Sexta, 8h às 18h\n";
-        $basePrompt .= "- Website: www.ensinocerto.com.br\n";
+        $basePrompt .= "- Website: www.primeead.com.br\n";
         
         if (!empty($context['system_info']['mec_authorization'])) {
             $basePrompt .= "- Autorização MEC: {$context['system_info']['mec_authorization']}\n";
@@ -788,7 +788,7 @@ class ChatService
      */
     protected function getFallbackResponse(string $userMessage, array $context): string
     {
-        $supportEmail = $context['system_info']['support_email'] ?? 'contato@ensinocerto.com.br';
+        $supportEmail = $context['system_info']['support_email'] ?? 'contato@primeead.com.br';
         $supportPhone = $context['system_info']['support_phone'] ?? '';
         
         $response = "Desculpe, estou enfrentando dificuldades técnicas no momento.\n\n";
@@ -809,7 +809,7 @@ class ChatService
      */
     protected function getDefaultSupportPrompt(): string
     {
-        return "Você é um assistente virtual especializado em EJA Supletivo da plataforma Ensino Certo. Sua função é ajudar alunos e interessados com informações sobre matrículas, pagamentos, cursos e processos educacionais.
+        return "Você é um assistente virtual especializado em EJA Supletivo da plataforma Educa Prime. Sua função é ajudar alunos e interessados com informações sobre matrículas, pagamentos, cursos e processos educacionais.
 
 **REGRAS PARA VELOCIDADE MÁXIMA:**
 - **RESPOSTAS ULTRA-CURTAS** - Máximo 1 frase

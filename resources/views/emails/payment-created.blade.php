@@ -324,7 +324,7 @@
             <h4>📞 Precisa de Ajuda?</h4>
             <p>Se você tiver dúvidas sobre esta cobrança, entre em contato conosco:</p>
             <p>
-                📧 Email: contato@ensinocerto.com.br<br>
+                📧 Email: contato@primeead.com.br<br>
                 📱 WhatsApp: (11) 99999-9999<br>
                 🕒 Horário de atendimento: Segunda a Sexta, 8h às 18h
             </p>

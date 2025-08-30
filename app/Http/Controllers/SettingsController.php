@@ -1077,7 +1077,7 @@ class SettingsController extends Controller
 
         try {
             $logoType = $request->logo_type;
-            $defaultPath = '/assets/images/logotipo-dark.svg';
+            $defaultPath = '/assets/images/logo.svg';
             
             if ($logoType === 'sidebar') {
                 SystemSetting::set('sidebar_logo_path', $defaultPath, 'string', 'appearance', 'Caminho para o logo do sidebar');

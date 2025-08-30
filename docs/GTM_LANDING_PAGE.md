@@ -163,4 +163,4 @@ if ($landingSettings['gtm_enabled'] && !empty($landingSettings['gtm_id'])) {
 
 **Versão**: 1.0  
 **Última atualização**: Janeiro 2025  
-**Desenvolvedor**: Sistema Ensino Certo
+**Desenvolvedor**: Sistema Educa Prime

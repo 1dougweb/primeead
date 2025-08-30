@@ -567,7 +567,7 @@ function saveSchoolSignature() {
                                         <div class="card-body text-center">
                                             <div class="mb-3">
                                                 <img id="sidebar-logo-preview" 
-                                                     src="{{ $appearanceSettings['sidebar_logo_path'] ?? '/assets/images/logotipo-dark.svg' }}" 
+                                                     src="{{ $appearanceSettings['sidebar_logo_path'] ?? '/assets/images/logo.svg' }}" 
                                                      alt="Logo Sidebar" 
                                                      class="img-fluid" 
                                                      style="max-height: 80px; max-width: 200px;">
@@ -606,7 +606,7 @@ function saveSchoolSignature() {
                                         <div class="card-body text-center">
                                             <div class="mb-3">
                                                 <img id="login-logo-preview" 
-                                                     src="{{ $appearanceSettings['login_logo_path'] ?? '/assets/images/logotipo-dark.svg' }}" 
+                                                     src="{{ $appearanceSettings['login_logo_path'] ?? '/assets/images/logo.svg' }}" 
                                                      alt="Logo Login" 
                                                      class="img-fluid" 
                                                      style="max-height: 80px; max-width: 200px;">
@@ -988,7 +988,7 @@ function saveSchoolSignature() {
                                     <div class="form-group mb-3">
                                         <label for="mail_from_address" class="form-label">Email de Origem</label>
                                         <input type="email" class="form-control" id="mail_from_address" name="mail_from_address" 
-                                               value="{{ old('mail_from_address', $settings['mail_from_address'] ?? 'contato@ensinocerto.com.br') }}"
+                                               value="{{ old('mail_from_address', $settings['mail_from_address'] ?? 'contato@primeead.com.br') }}"
                                                placeholder="nome@dominio.com.br">
                                         <div class="form-text">Email que aparecerá como remetente</div>
                                     </div>
@@ -1232,7 +1232,7 @@ function saveSchoolSignature() {
                             <div class="form-group mb-3">
                                 <label for="thank_you_contact_email" class="form-label">Email de Contato</label>
                                 <input type="email" class="form-control" id="thank_you_contact_email" name="thank_you_contact_email" 
-                                       value="{{ old('thank_you_contact_email', $settings['thank_you_contact_email'] ?? 'contato@ensinocerto.com.br') }}">
+                                       value="{{ old('thank_you_contact_email', $settings['thank_you_contact_email'] ?? 'contato@primeead.com.br') }}">
                             </div>
                         </div>
                         
@@ -1626,7 +1626,7 @@ function saveSchoolSignature() {
                                     <div class="form-group mb-3">
                                         <label for="landing_benefits_title" class="form-label">Título da Seção</label>
                                         <input type="text" class="form-control" id="landing_benefits_title" name="landing_benefits_title" 
-                                               value="{{ old('landing_benefits_title', $landingSettings['benefits_title'] ?? 'Por que escolher a Ensino Certo?') }}">
+                                               value="{{ old('landing_benefits_title', $landingSettings['benefits_title'] ?? 'Por que escolher a Educa Prime?') }}">
                                     </div>
                                 </div>
                             </div>
@@ -1845,7 +1845,7 @@ function saveSchoolSignature() {
                                     <div class="form-group mb-3">
                                         <label for="landing_footer_company_name" class="form-label">Nome da Empresa</label>
                                         <input type="text" class="form-control" id="landing_footer_company_name" name="landing_footer_company_name" 
-                                               value="{{ old('landing_footer_company_name', $landingSettings['footer_company_name'] ?? 'Ensino Certo') }}">
+                                               value="{{ old('landing_footer_company_name', $landingSettings['footer_company_name'] ?? 'Educa Prime') }}">
                                     </div>
                                 </div>
                             </div>
@@ -1855,7 +1855,7 @@ function saveSchoolSignature() {
                                     <div class="form-group mb-3">
                                         <label for="landing_footer_email" class="form-label">Email de Contato</label>
                                         <input type="email" class="form-control" id="landing_footer_email" name="landing_footer_email" 
-                                               value="{{ old('landing_footer_email', $landingSettings['footer_email'] ?? 'contato@ensinocerto.com.br') }}">
+                                               value="{{ old('landing_footer_email', $landingSettings['footer_email'] ?? 'contato@primeead.com.br') }}">
                                     </div>
                                 </div>
                                 
@@ -1883,7 +1883,7 @@ function saveSchoolSignature() {
                                     <div class="form-group mb-3">
                                         <label for="landing_footer_copyright" class="form-label">Texto de Copyright</label>
                                         <input type="text" class="form-control" id="landing_footer_copyright" name="landing_footer_copyright" 
-                                               value="{{ old('landing_footer_copyright', $landingSettings['footer_copyright'] ?? '© 2025 Ensino Certo. Todos os direitos reservados.') }}">
+                                               value="{{ old('landing_footer_copyright', $landingSettings['footer_copyright'] ?? '© 2025 Educa Prime. Todos os direitos reservados.') }}">
                                     </div>
                                 </div>
                             </div>
@@ -2106,7 +2106,7 @@ function saveSchoolSignature() {
                                 <div class="col-md-6">
                                     <div class="form-group mb-3">
                                         <label for="landing_chat_welcome_message" class="form-label">Mensagem de Boas-vindas</label>
-                                        <textarea class="form-control" id="landing_chat_welcome_message" name="landing_chat_welcome_message" rows="3" placeholder="Mensagem exibida quando o chat é aberto">{{ $landingSettings['chat_welcome_message'] ?? 'Olá! Sou o assistente virtual da Ensino Certo, especializado em EJA Supletivo. Como posso ajudá-lo hoje? Posso orientar sobre matrículas, pagamentos, disciplinas e muito mais!' }}</textarea>
+                                        <textarea class="form-control" id="landing_chat_welcome_message" name="landing_chat_welcome_message" rows="3" placeholder="Mensagem exibida quando o chat é aberto">{{ $landingSettings['chat_welcome_message'] ?? 'Olá! Sou o assistente virtual da Educa Prime, especializado em EJA Supletivo. Como posso ajudá-lo hoje? Posso orientar sobre matrículas, pagamentos, disciplinas e muito mais!' }}</textarea>
                                         <small class="form-text text-muted">Mensagem de boas-vindas exibida quando o usuário abre o chat.</small>
                                     </div>
                                 </div>

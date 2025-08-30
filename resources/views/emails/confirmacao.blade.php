@@ -121,7 +121,7 @@
                 <p><strong>Telefone</strong><br>(11) 9999-9999</p>
             </div>
             <div class="contact-item">
-                <p><strong>Email</strong><br>contato@ensinocerto.com.br</p>
+                <p><strong>Email</strong><br>contato@primeead.com.br</p>
             </div>
             <div class="contact-item">
                 <p><strong>Horário</strong><br>Seg-Sex: 8h às 18h</p>
@@ -129,12 +129,12 @@
         </div>
         
         <div style="text-align: center; margin-top: 30px;">
-            <a href="https://www.ensinocerto.com.br" class="button">Visite nosso site</a>
+            <a href="https://www.primeead.com.br" class="button">Visite nosso site</a>
         </div>
     </div>
     
     <div class="footer">
-        <p>EJA Supletivo - Ensino Certo</p>
+        <p>EJA Supletivo - Educa Prime</p>
         <p>Este é um email automático, por favor não responda.</p>
     </div>
 </body>

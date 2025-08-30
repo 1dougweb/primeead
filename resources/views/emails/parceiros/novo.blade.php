@@ -6,7 +6,7 @@
         <i class="fas fa-handshake"></i> Novo Cadastro de Parceiro
     </h2>
     <p style="margin: 10px 0 0 0; color: #6c757d;">
-        Um novo interessado se cadastrou para ser parceiro da Ensino Certo
+        Um novo interessado se cadastrou para ser parceiro da Educa Prime
     </p>
 </div>
 
@@ -98,7 +98,7 @@
 </div>
 
 @if($parceiro->plano_negocio)
-<div style="background-color: #ffffff; padding: 20px; border-radius: 8px; border-left: 4px solid #6f42c1; margin-top: 20px;">
+<div style="background-color: #ffffff; padding: 20px; border-radius: 8px; border-left: 4px solid #0B9950; margin-top: 20px;">
     <h3 style="color: #333; margin-top: 0;">💼 Plano de Negócio</h3>
     <p style="color: #495057; line-height: 1.6; background-color: #f8f9fa; padding: 15px; border-radius: 4px; margin: 0;">
         {{ $parceiro->plano_negocio }}

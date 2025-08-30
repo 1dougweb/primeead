@@ -48,7 +48,7 @@ class GenerateGoogleAuthUrl extends Command
             
             $this->info('📋 Instruções:');
             $this->line('1. Copie a URL acima e cole no seu navegador');
-            $this->line('2. Faça login com sua conta Google (ensinocertodocumentos@gmail.com)');
+            $this->line('2. Faça login com sua conta Google (primeeaddocumentos@gmail.com)');
             $this->line('3. Clique em "Permitir" para autorizar o acesso');
             $this->line('4. Você será redirecionado para uma URL que contém o código');
             $this->line('5. Copie o código da URL (parte após "code=")');

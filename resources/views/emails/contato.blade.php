@@ -173,7 +173,7 @@
         </div>
         
         <div class="footer">
-            <p>Esta mensagem foi enviada através do formulário de contato do site <strong>Ensino Certo</strong></p>
+            <p>Esta mensagem foi enviada através do formulário de contato do site <strong>Educa Prime</strong></p>
             <p>Por favor, responda em até 24 horas para melhor atendimento ao cliente.</p>
         </div>
     </div>

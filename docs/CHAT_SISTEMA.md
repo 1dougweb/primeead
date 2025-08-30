@@ -1,8 +1,8 @@
-# Sistema de Chat Integrado com ChatGPT - Ensino Certo
+# Sistema de Chat Integrado com ChatGPT - Educa Prime
 
 ## 📋 **Visão Geral**
 
-Sistema de chat inteligente integrado com ChatGPT para atendimento ao cliente da plataforma Ensino Certo, especializado em EJA Supletivo. O sistema permite consultas personalizadas sobre matrículas, pagamentos e processos educacionais, incluindo a funcionalidade de geração de segunda via de boleto.
+Sistema de chat inteligente integrado com ChatGPT para atendimento ao cliente da plataforma Educa Prime, especializado em EJA Supletivo. O sistema permite consultas personalizadas sobre matrículas, pagamentos e processos educacionais, incluindo a funcionalidade de geração de segunda via de boleto.
 
 ## 🏗️ **Arquitetura**
 
@@ -236,11 +236,11 @@ MERCADOPAGO_SANDBOX=true
 
 ### **Contatos**
 - **Desenvolvimento**: Equipe técnica
-- **Suporte**: contato@ensinocerto.com.br
+- **Suporte**: contato@primeead.com.br
 - **Documentação**: Este arquivo e comentários no código
 
 ---
 
-**Desenvolvido para Ensino Certo** 🎓  
+**Desenvolvido para Educa Prime** 🎓  
 **Versão**: 2.0.0  
 **Última atualização**: Julho 2024

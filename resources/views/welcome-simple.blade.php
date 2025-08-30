@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>EJA Supletivo Ensino Médio Online | Ensino Certo</title>
+    <title>EJA Supletivo Ensino Médio Online | Educa Prime</title>
 </head>
 <body>
     <h1>EJA Supletivo Ensino Médio Online</h1>
-    <p>Bem-vindo ao Ensino Certo</p>
+    <p>Bem-vindo ao Educa Prime</p>
     
     @if(isset($countdownSettings) && $countdownSettings['enabled'])
         <div class="countdown">

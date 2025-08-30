@@ -124,6 +124,6 @@ return [
     |
     */
 
-    'admin_email' => env('MAIL_ADMIN_EMAIL', 'admin@ensinocerto.com.br'),
+    'admin_email' => env('MAIL_ADMIN_EMAIL', 'admin@sistema.com.br'),
 
 ];

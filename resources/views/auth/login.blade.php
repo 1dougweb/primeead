@@ -14,8 +14,8 @@
     
     <style>
         :root {
-            --primary-color: #4a4a9c;
-            --primary-hover: #3a3a7c;
+            --primary-color:rgb(107, 156, 74);
+            --primary-hover:rgb(82, 124, 58);
             --border-radius: 12px;
         }
         
@@ -226,7 +226,7 @@
             <div class="login-body">
                 <div class="text-center mb-4">
                     @php
-                        $loginLogoPath = \App\Models\SystemSetting::get('login_logo_path', '/assets/images/logotipo-dark.svg');
+                        $loginLogoPath = \App\Models\SystemSetting::get('login_logo_path', '/assets/images/logo.svg');
                     @endphp
                     <div class="login-logo mb-3">
                         <img src="{{ asset($loginLogoPath) }}" 

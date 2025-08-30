@@ -30,13 +30,13 @@ class UpdateGoogleCredentials extends Command
         
         $this->info('📋 Instruções para criar novo cliente OAuth2:');
         $this->line('1. Acesse: https://console.cloud.google.com/');
-        $this->line('2. Faça login com ensinocertodocumentos@gmail.com');
+        $this->line('2. Faça login com primeeaddocumentos@gmail.com');
         $this->line('3. Selecione o projeto "ensino-certo"');
         $this->line('4. Vá em "APIs & Services" > "Credentials"');
         $this->line('5. Clique em "+ CREATE CREDENTIALS" > "OAuth 2.0 Client IDs"');
         $this->line('6. Configure:');
         $this->line('   - Application type: Web application');
-        $this->line('   - Name: Ensino Certo - Google Drive');
+        $this->line('   - Name: Educa Prime - Google Drive');
         $this->line('   - Authorized redirect URIs:');
         $this->line('     * http://127.0.0.1:8000/auth/google/callback');
         $this->line('     * http://localhost:8000/auth/google/callback');

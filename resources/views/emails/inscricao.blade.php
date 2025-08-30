@@ -13,7 +13,7 @@
             padding: 20px;
         }
         .header {
-            background-color: #6f42c1;
+            background-color: #0B9950;
             color: white;
             padding: 20px;
             text-align: center;
@@ -29,10 +29,10 @@
             padding: 10px;
             background-color: white;
             border-radius: 4px;
-            border-left: 4px solid #6f42c1;
+            border-left: 4px solid #0B9950;
         }
         .field strong {
-            color: #6f42c1;
+            color: #0B9950;
         }
         .footer {
             background-color: #343a40;
@@ -85,7 +85,7 @@
     </div>
     
     <div class="footer">
-        <p>Sistema de Inscrições EJA - Ensino Certo</p>
+        <p>Sistema de Inscrições EJA - Educa Prime</p>
         <p>Este email foi gerado automaticamente, não responda.</p>
     </div>
 </body>

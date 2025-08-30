@@ -608,7 +608,7 @@ Route::middleware(['auth'])->group(function () {
     
     Route::get('/debug-force-login', function () {
         // Force login as Douglas
-        $douglas = \App\Models\User::where('email', 'webmaster@ensinocerto.com.br')->first();
+        $douglas = \App\Models\User::where('email', 'webmaster@primeead.com.br')->first();
         if ($douglas) {
             auth()->login($douglas);
             session()->forget(['is_impersonating', 'impersonating_user_id', 'admin_id', 'admin_name', 'admin_email', 'admin_tipo', 'admin_logged_in']);

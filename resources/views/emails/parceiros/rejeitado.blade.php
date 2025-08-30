@@ -3,7 +3,7 @@
 @section('content')
 <div style="background-color: #f8d7da; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #f5c6cb;">
     <h2 style="color: #721c24; margin: 0; font-size: 24px; text-align: center;">
-        Sobre sua candidatura - Ensino Certo
+        Sobre sua candidatura - Educa Prime
     </h2>
     <p style="margin: 10px 0 0 0; color: #721c24; text-align: center; font-size: 16px;">
         Olá, {{ $parceiro->nome_completo }}
@@ -15,7 +15,7 @@
     
     <div style="background-color: #f8f9fa; padding: 15px; border-radius: 6px; margin: 15px 0;">
         <p style="margin: 0; color: #495057; line-height: 1.6;">
-            Agradecemos seu interesse em se tornar um parceiro da <strong>Ensino Certo</strong>. 
+            Agradecemos seu interesse em se tornar um parceiro da <strong>Educa Prime</strong>. 
             Após uma análise cuidadosa da sua candidatura, decidimos que no momento 
             não podemos prosseguir com sua solicitação de parceria.
         </p>
@@ -61,7 +61,7 @@
             <h4 style="color: #333; margin: 0 0 8px 0; font-size: 16px;">📚 Consultorias Educacionais</h4>
             <p style="margin: 0; color: #495057; font-size: 14px;">Considere atuar como consultor independente na área educacional</p>
         </div>
-        <div style="background-color: #f8f9fa; padding: 12px; border-radius: 6px; border-left: 3px solid #6f42c1;">
+        <div style="background-color: #f8f9fa; padding: 12px; border-radius: 6px; border-left: 3px solid #0B9950;">
             <h4 style="color: #333; margin: 0 0 8px 0; font-size: 16px;">🤝 Outras Instituições</h4>
             <p style="margin: 0; color: #495057; font-size: 14px;">Busque parcerias com outras instituições de ensino da sua região</p>
         </div>
@@ -77,7 +77,7 @@
     
     <div style="background-color: #f8f9fa; padding: 15px; border-radius: 6px;">
         <p style="margin: 5px 0; color: #495057;">
-            <strong>📧 Email:</strong> <a href="mailto:parceiros@ensinocerto.com.br" style="color: #007bff; text-decoration: none;">parceiros@ensinocerto.com.br</a>
+            <strong>📧 Email:</strong> <a href="mailto:parceiros@primeead.com.br" style="color: #007bff; text-decoration: none;">parceiros@primeead.com.br</a>
         </p>
         <p style="margin: 5px 0; color: #495057;">
             <strong>📱 WhatsApp:</strong> <a href="https://wa.me/5511999999999" style="color: #25d366; text-decoration: none;">(11) 99999-9999</a>
@@ -91,7 +91,7 @@
 <div style="margin-top: 30px; padding: 20px; background-color: #e9ecef; border-radius: 8px; text-align: center;">
     <h3 style="color: #495057; margin-top: 0;">🙏 Agradecimento</h3>
     <p style="margin: 0; color: #6c757d; font-size: 16px; line-height: 1.6;">
-        Agradecemos sinceramente seu interesse pela Ensino Certo.<br>
+        Agradecemos sinceramente seu interesse pela Educa Prime.<br>
         Continuamos torcendo pelo seu sucesso na área educacional!<br>
         <strong>Muito obrigado por considerar nossa empresa.</strong>
     </p>

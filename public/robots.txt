@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://ensinocerto.com.br/sitemap.xml
+Sitemap: https://primeead.com.br/sitemap.xml
 
 # Páginas importantes para indexação
 Allow: /eja-supletivo

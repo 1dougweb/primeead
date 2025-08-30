@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidade - Ensino Certo</title>
-    <meta name="description" content="Política de Privacidade da Ensino Certo. Saiba como coletamos, utilizamos e protegemos seus dados pessoais.">
+    <title>Política de Privacidade - Educa Prime</title>
+    <meta name="description" content="Política de Privacidade da Educa Prime. Saiba como coletamos, utilizamos e protegemos seus dados pessoais.">
     <meta name="robots" content="index, follow">
     
     <!-- CSS -->
@@ -145,7 +145,7 @@
         
         <div class="policy-section">
             <h2>1. Compromisso com a sua privacidade</h2>
-            <p>A Ensino Certo valoriza a transparência e o respeito aos seus dados pessoais. Esta Política de Privacidade tem como objetivo esclarecer como coletamos, utilizamos e protegemos as informações fornecidas por você ao utilizar nossos serviços.</p>
+            <p>A Educa Prime valoriza a transparência e o respeito aos seus dados pessoais. Esta Política de Privacidade tem como objetivo esclarecer como coletamos, utilizamos e protegemos as informações fornecidas por você ao utilizar nossos serviços.</p>
         </div>
         
         <div class="policy-section">
@@ -175,7 +175,7 @@
         
         <div class="policy-section">
             <h2>4. Compartilhamento de dados</h2>
-            <p>A Ensino Certo não vende, aluga ou compartilha seus dados pessoais com terceiros, exceto nos seguintes casos:</p>
+            <p>A Educa Prime não vende, aluga ou compartilha seus dados pessoais com terceiros, exceto nos seguintes casos:</p>
             <ul>
                 <li>Quando exigido por lei ou autoridades competentes</li>
                 <li>Para parceiros estratégicos, quando necessário para a execução dos nossos serviços (ex: provedores de pagamento)</li>
@@ -214,7 +214,7 @@
         <div class="contact-info">
             <h3>Informações de Contato</h3>
             <p><strong>Última atualização:</strong> 29 de abril de 2025</p>
-            <p><strong>Ensino Certo</strong><br>
+            <p><strong>Educa Prime</strong><br>
             CNPJ: 73.075.954/0001-37<br>
             Telefone: (11) 4210-3596</p>
         </div>

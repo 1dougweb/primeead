@@ -5,11 +5,10 @@
             <!-- Coluna 1: Logo e Descrição da Empresa -->
             <div class="footer-column">
                 <div class="footer-logo">
-                    <img src="{{ asset('assets/images/logotipo-dark.svg') }}" alt="Ensino Certo Logo" class="footer-logo-img">
-                    <img src="{{ asset('assets/images/anhangue-vip.svg') }}" alt="Anhanguera Logo" class="footer-logo-partner">
+                    <img src="{{ asset('assets/images/logo.svg') }}" alt="Educa Prime Logo" class="footer-logo-img">
                 </div>
                 <p class="footer-description">
-                    {{ $landingSettings['footer_company_name'] ?? 'Centro de Ensino Certo Educacional' }} oferece cursos de EJA reconhecidos pelo MEC, 
+                    {{ $landingSettings['footer_company_name'] ?? 'Centro de Educa Prime Educacional' }} oferece cursos de EJA reconhecidos pelo MEC, 
                     proporcionando educação de qualidade para quem busca concluir seus estudos.
                 </p>
                 <div class="footer-badges">
@@ -96,7 +95,7 @@
                     @else
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <a href="mailto:contato@ensinocerto.com.br">contato@ensinocerto.com.br</a>
+                            <a href="mailto:contato@primeead.com.br">contato@primeead.com.br</a>
                         </div>
                     @endif
                     
@@ -173,7 +172,7 @@
         <!-- Rodapé inferior -->
         <div class="footer-bottom">
             <div class="footer-bottom-left">
-                <p>{{ $landingSettings['footer_copyright'] ?? 'Configure o copyright no painel de controle.' }} - <a href="https://wa.me/5511992950897" target="_blank" style="color: #1C7FDC;text-decoration: none;">Desenvolvido por Douglas <i class="fas fa-coffee"></i></a></p>
+                <p>{{ $landingSettings['footer_copyright'] ?? 'Configure o copyright no painel de controle.' }} - <a href="https://wa.me/5511992950897" target="_blank" style="color:rgb(217, 220, 28);text-decoration: none;">Desenvolvido por Douglas <i class="fas fa-coffee"></i></a></p>
             </div>
             <div class="footer-bottom-right">
                 <div class="footer-policies">

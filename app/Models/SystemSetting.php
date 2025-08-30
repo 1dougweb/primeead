@@ -259,8 +259,8 @@ class SystemSetting extends Model
     public static function getAppearanceSettings()
     {
         return [
-            'sidebar_logo_path' => self::get('sidebar_logo_path', '/assets/images/logotipo-dark.svg'),
-            'login_logo_path' => self::get('login_logo_path', '/assets/images/logotipo-dark.svg'),
+            'sidebar_logo_path' => self::get('sidebar_logo_path', '/assets/images/logo.svg'),
+            'login_logo_path' => self::get('login_logo_path', '/assets/images/logo.svg'),
         ];
     }
 
@@ -368,7 +368,7 @@ class SystemSetting extends Model
             'mail_username' => self::get('mail_username', ''),
             'mail_password' => self::get('mail_password', ''),
             'mail_encryption' => self::get('mail_encryption', 'tls'),
-            'mail_from_address' => self::get('mail_from_address', 'contato@ensinocerto.com.br'),
+            'mail_from_address' => self::get('mail_from_address', 'contato@primeead.com.br'),
             'mail_from_name' => self::get('mail_from_name', 'EJA Admin'),
             'mail_reply_to' => self::get('mail_reply_to', ''),
             'admin_notification_email' => self::get('admin_notification_email', ''),
@@ -419,7 +419,7 @@ class SystemSetting extends Model
             'show_steps' => self::get('thank_you_show_steps', true),
             'show_tips' => self::get('thank_you_show_tips', true),
             'contact_phone' => self::get('thank_you_contact_phone', '(11) 9999-9999'),
-            'contact_email' => self::get('thank_you_contact_email', 'contato@ensinocerto.com.br'),
+            'contact_email' => self::get('thank_you_contact_email', 'contato@primeead.com.br'),
             'contact_hours' => self::get('thank_you_contact_hours', 'Seg-Sex: 8h às 18h'),
             'custom_message' => self::get('thank_you_custom_message', ''),
         ];
@@ -564,7 +564,7 @@ class SystemSetting extends Model
             'hero_subtitle' => self::get('landing_hero_subtitle', 'Diplomas reconhecidos pelo MEC, aulas 100% online e suporte dedicado para sua jornada acadêmica.'),
             'cta_button_text' => self::get('landing_cta_button_text', 'QUERO MINHA VAGA!'),
             'cta_button_color' => self::get('landing_cta_button_color', '#28a745'),
-            'benefits_title' => self::get('landing_benefits_title', 'Por que escolher a Ensino Certo?'),
+            'benefits_title' => self::get('landing_benefits_title', 'Por que escolher a Educa Prime?'),
             'benefit_1' => self::get('landing_benefit_1', '✅ Diplomas Reconhecidos pelo MEC'),
             'benefit_2' => self::get('landing_benefit_2', '✅ Aulas 100% Online'),
             'benefit_3' => self::get('landing_benefit_3', '✅ Preços Acessíveis'),
@@ -573,11 +573,11 @@ class SystemSetting extends Model
             'form_subtitle' => self::get('landing_form_subtitle', 'É rápido, fácil e gratuito!'),
             'form_button_text' => self::get('landing_form_button_text', 'GARANTIR MINHA VAGA'),
             'form_button_color' => self::get('landing_form_button_color', '#dc3545'),
-            'footer_company_name' => self::get('landing_footer_company_name', 'Centro de Ensino Certo Educacional'),
-            'footer_email' => self::get('landing_footer_email', 'contato@ensinocerto.com.br'),
+            'footer_company_name' => self::get('landing_footer_company_name', 'Centro de Educa Prime Educacional'),
+            'footer_email' => self::get('landing_footer_email', 'contato@primeead.com.br'),
             'footer_phone' => self::get('landing_footer_phone', '(11) 91701-2033'),
             'footer_address' => self::get('landing_footer_address', 'Av. José Caballero, 231 - Vila Bastos, Santo André - SP, 09040-210'),
-            'footer_copyright' => self::get('landing_footer_copyright', '© 2024 Ensino Certo. Todos os direitos reservados.'),
+            'footer_copyright' => self::get('landing_footer_copyright', '© 2024 Educa Prime. Todos os direitos reservados.'),
             'social_facebook' => self::get('landing_social_facebook', ''),
             'social_instagram' => self::get('landing_social_instagram', ''),
             'social_linkedin' => self::get('landing_social_linkedin', ''),
@@ -876,7 +876,7 @@ Crie uma mensagem que motive o destinatário a buscar informações sobre certif
      */
     public static function getDefaultSupportPrompt(): string
     {
-        return 'Você é um assistente virtual especializado em EJA (Educação de Jovens e Adultos) Supletivo da Ensino Certo, uma instituição de ensino superior reconhecida pelo MEC.
+        return 'Você é um assistente virtual especializado em EJA (Educação de Jovens e Adultos) Supletivo da Educa Prime, uma instituição de ensino superior reconhecida pelo MEC.
 
 ## 🎯 SUA FUNÇÃO PRINCIPAL
 Você é um especialista em EJA Supletivo com autonomia para:

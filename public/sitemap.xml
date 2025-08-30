@@ -6,7 +6,7 @@
 
     <!-- Página Principal -->
     <url>
-        <loc>https://ensinocerto.com.br/</loc>
+        <loc>https://primeead.com.br/</loc>
         <lastmod>2025-01-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
@@ -14,7 +14,7 @@
 
     <!-- Página EJA Supletivo -->
     <url>
-        <loc>https://ensinocerto.com.br/eja-supletivo</loc>
+        <loc>https://primeead.com.br/eja-supletivo</loc>
         <lastmod>2025-01-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -22,7 +22,7 @@
 
     <!-- Página de Política de Privacidade -->
     <url>
-        <loc>https://ensinocerto.com.br/politica-privacidade</loc>
+        <loc>https://primeead.com.br/politica-privacidade</loc>
         <lastmod>2025-01-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
@@ -30,7 +30,7 @@
 
     <!-- Página de Dashboard (se aplicável) -->
     <url>
-        <loc>https://ensinocerto.com.br/dashboard</loc>
+        <loc>https://primeead.com.br/dashboard</loc>
         <lastmod>2025-01-28</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.3</priority>

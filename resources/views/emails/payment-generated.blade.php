@@ -110,13 +110,13 @@
             <p>❓ <strong>Dúvidas?</strong> Entre em contato conosco se precisar de ajuda:</p>
             
             <div style="text-align: center; margin: 30px 0;">
-                <a href="mailto:contato@ensinocerto.com" class="btn">📧 Entrar em Contato</a>
+                <a href="mailto:contato@primeead.com" class="btn">📧 Entrar em Contato</a>
                 <a href="https://api.whatsapp.com/send?phone=5511999999999" class="btn btn-primary">📱 WhatsApp</a>
             </div>
             
             <div class="footer">
                 <p>Este é um email automático. Por favor, não responda.</p>
-                <p><strong>Ensino Certo</strong> - Educação de Qualidade</p>
+                <p><strong>Educa Prime</strong> - Educação de Qualidade</p>
                 @if(isset($paymentData['id']))
                     <p>ID do Pagamento: {{ $paymentData['id'] }}</p>
                 @endif

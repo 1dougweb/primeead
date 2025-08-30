@@ -1,7 +1,7 @@
 :root {
     --highlight-light: #F5F1FF;
     --secondary-button: #FE9E75;
-    --benefit-highlight: #22053D;
+    --benefit-highlight: #73ce0a;
 }
 
 /* Estilos Gerais */
@@ -43,7 +43,7 @@ body {
 }
 
 .btn:hover {
-    background-color: #0d47a1;
+    background-color: #0B9950;
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
@@ -57,17 +57,17 @@ body {
     display: inline-block;
     padding: 12px 30px;
     background-color: transparent;
-    color: #0d47a1;
+    color: #0B9950;
     text-decoration: none;
     border-radius: 5px;
     font-weight: 600;
     transition: all 0.3s ease;
-    border: 2px solid #0d47a1;
+    border: 2px solid #0B9950;
     margin-left: 15px;
 }
 
 .btn-secondary:hover {
-    background-color: #0d47a1;
+    background-color: #0B9950;
     color: white;
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -75,7 +75,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     margin-bottom: 20px;
-    color: #0d47a1;
+    color: #0B9950;
 }
 
 p {
@@ -110,7 +110,7 @@ p {
 }
 
 .secondary-color {
-    color: #0d47a1;
+    color: #0B9950;
 }
 
 /* Navbar */
@@ -166,8 +166,8 @@ p {
 
 /* Hero Section */
 .hero {
-    background: #2500AD;
-    background: linear-gradient(145deg,rgba(37, 0, 173, 1) 0%, rgba(99, 0, 148, 1) 100%);
+    background: #067D40;
+    background: linear-gradient(145deg,rgb(6, 125, 12) 0%, rgb(22, 239, 100) 100%);
     padding: 40px 0 80px;
     position: relative;
     color: white;
@@ -269,7 +269,7 @@ p {
 }
 
 .form-container {
-    background-color: #2a0a50;
+    background-color: #11500A;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -360,7 +360,7 @@ p {
 
 .btn-submit {
     width: 100%;
-    background-color: #0066ff;
+    background-color: #FFC107;
     color: white;
     font-size: 18px;
     padding: 15px;
@@ -376,7 +376,7 @@ p {
 }
 
 .btn-submit:hover {
-    background-color: #0052cc;
+    background-color: #ccbe00;
 }
 
 /* Benefits List in Hero */
@@ -818,7 +818,7 @@ p {
 }
 
 .iti__country-list {
-    background-color: #2a0a50;
+    background-color: #11500A;
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: white;
     max-height: 200px;
@@ -870,7 +870,7 @@ p {
 }
 
 .custom-select select option {
-    background-color: #2a0a50;
+    background-color: #11500A;
     color: white;
 }
 
@@ -995,7 +995,7 @@ p {
 /* Estilos para a seção de Diferenciais */
 #diferenciais {
     padding: 80px 0;
-    background: linear-gradient(135deg, #2a0a50 0%, #4a1a70 100%);
+    background: linear-gradient(135deg, #11500A 0%, #1d701a 100%);
     color: white;
     position: relative;
     overflow: hidden;
@@ -1059,7 +1059,7 @@ p {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, #7B2CBF, #C77DFF, #E0AAFF);
+    background: linear-gradient(90deg, #bfb02c, #fff67d, #ffebaa);
     transform: translateX(-100%);
     transition: transform 0.3s ease;
 }
@@ -1078,7 +1078,7 @@ p {
     width: 80px;
     height: 80px;
     margin: 0 auto 25px;
-    background: linear-gradient(135deg, #7B2CBF, #C77DFF);
+    background: linear-gradient(135deg, #4ebf2c, #187904);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1088,7 +1088,7 @@ p {
 
 .diferencial-card:hover .diferencial-icon {
     transform: scale(1.1);
-    box-shadow: 0 10px 30px rgba(123, 44, 191, 0.4);
+    box-shadow: 0 10px 30px rgba(38, 250, 38, 0.4);
 }
 
 .diferencial-icon i {
@@ -1124,7 +1124,7 @@ p {
 }
 
 .btn-primary-cta {
-    background: linear-gradient(135deg, #7B2CBF, #C77DFF);
+    background: linear-gradient(135deg, #bf8c2c, #ebff7d);
     color: white;
     font-weight: 700;
     font-size: 1.1rem;
@@ -1134,7 +1134,6 @@ p {
     display: inline-flex;
     align-items: center;
     transition: all 0.3s ease;
-    border: 2px solid transparent;
     position: relative;
     overflow: hidden;
 }
@@ -1156,7 +1155,7 @@ p {
 
 .btn-primary-cta:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(123, 44, 191, 0.4);
+    box-shadow: 0 15px 35px rgba(164, 191, 44, 0.4);
     color: white;
     text-decoration: none;
 }
@@ -1243,7 +1242,7 @@ p {
 }
 
 .estude-casa-text h2 {
-    color: #2a0a50;
+    color: #11500A;
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 20px;
@@ -1266,14 +1265,14 @@ p {
 .prazo-info {
     background: white!important;
     min-width: 100%;
-    border-left: 4px solid #6f42c1;
+    border-left: 4px solid #0B9950;
     padding: 25px;
     border-radius: 8px;
     margin-top: 30px;
 }
 
 .prazo-info h3 {
-    color: #6f42c1;
+    color: #0B9950;
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 10px;
@@ -1379,7 +1378,7 @@ p {
 
 /* Barra de acesso admin */
 .admin-access-bar {
-    background: linear-gradient(135deg, #2a0a50 0%, #4a1a70 100%);
+    background: linear-gradient(135deg, #052702 0%, #167509 100%);
     color: white;
     padding: 8px 0;
     font-size: 0.9rem;
@@ -1444,7 +1443,7 @@ p {
 /* Estilos para a seção Tire suas dúvidas */
 #tire-duvidas {
     padding: 80px 0;
-    background: linear-gradient(135deg, #2a0a50 0%, #4a1a70 100%);
+    background: linear-gradient(135deg, #11500A 0%, #4a1a70 100%);
     color: white;
     position: relative;
     overflow: hidden;
@@ -1685,7 +1684,7 @@ p {
 }
 
 #perguntas-frequentes .section-header h2 {
-    color: #0d47a1;
+    color: #0B9950;
     font-size: 42px;
     font-weight: 700;
     margin-bottom: 15px;
@@ -1722,7 +1721,7 @@ p {
 }
 
 .faq-item.active {
-    border-color: #0d47a1;
+    border-color: #0B9950;
 }
 
 .faq-question {
@@ -1742,14 +1741,14 @@ p {
 }
 
 .faq-item.active .faq-question {
-    background-color: #0d47a1;
+    background-color: #0B9950;
     color: white;
 }
 
 .faq-question i:first-child {
     font-size: 20px;
     margin-right: 15px;
-    color: #0d47a1;
+    color: #0B9950;
     min-width: 25px;
 }
 
@@ -1810,7 +1809,7 @@ p {
 }
 
 .acesso-card {
-    background: linear-gradient(135deg, #7b1fa2 0%, #9c27b0 100%);
+    background: linear-gradient(135deg, #4fa21f 0%, #4eb027 100%);
     border-radius: 16px;
     padding: 25px 35px;
     display: flex;
@@ -1996,7 +1995,7 @@ p {
 
 /* Seção Oferta Especial */
 #oferta-especial {
-    background:#10001F;
+    background:#051f00;
     padding: 100px 0;
     position: relative;
     overflow: hidden;
@@ -2012,9 +2011,9 @@ p {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 30% 20%, rgba(124, 58, 237, 0.3) 0%, transparent 50%), 
-                radial-gradient(circle at 70% 80%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 10% 80%, rgba(168, 85, 247, 0.2) 0%, transparent 50%);
+    background: radial-gradient(circle at 30% 20%, rgba(88, 237, 58, 0.3) 0%, transparent 50%), 
+                radial-gradient(circle at 70% 80%, rgba(96, 246, 59, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 10% 80%, rgba(131, 247, 85, 0.2) 0%, transparent 50%);
     z-index: 1;
 }
 
@@ -2047,7 +2046,7 @@ p {
 }
 
 .promocao-banner {
-    background-image: linear-gradient(90deg, #9600FF 0%, #3A00FF 100%);
+    background-image: linear-gradient(90deg, #4fa300 0%, #5eff00 100%);
     border-radius: 24px;
     margin-bottom: 20px;
     position: relative;
@@ -2094,7 +2093,7 @@ p {
 }
 
 .countdown-icon {
-    background: #10001F;
+    background: #071f00;
     border-radius: 50%;
     position: absolute;
     left: 33%;
@@ -2114,7 +2113,7 @@ p {
     display: flex;
     border-radius: 14px;
     padding: 8px 20px 8px 40px;
-    background-color: #10001F;
+    background-color: #071f00;
     gap: 20px;
 }
 
@@ -2175,7 +2174,7 @@ p {
 .preco-desconto {
     padding: 20px;
     border-radius: 16px;
-    background-color: #22053C;
+    background-color: #1b2b03;
     gap: 0px!important;
     display: flex;
     flex-direction: column;
@@ -2307,7 +2306,6 @@ span.garantia-text {
 
 .form-container-oferta .form-group input:focus,
 .form-container-oferta .form-group select:focus {
-    border-color: #0d47a1;
     outline: none;
     box-shadow: 0 0 0 4px rgba(13, 71, 161, 0.1);
     transform: translateY(-2px);
@@ -2377,8 +2375,8 @@ span.garantia-text {
 
 .btn-matricule {
     width: 100%;
-    background: linear-gradient(135deg, #FE9E75 0%, #f97316 100%);
-    color: white;
+    background: linear-gradient(135deg, #fa650f 0%, #f9e216 100%);
+    color: rgb(255, 255, 255);
     border: none;
     padding: 20px;
     border-radius: 16px;
@@ -2388,14 +2386,14 @@ span.garantia-text {
     letter-spacing: 1.5px;
     transition: all 0.3s ease;
     cursor: pointer;
-    box-shadow: 0 8px 20px rgba(254, 158, 117, 0.4);
+    box-shadow: 0 8px 20px rgba(144, 254, 117, 0.4);
     font-family: 'Rubik', sans-serif;
 }
 
 .btn-matricule:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(254, 158, 117, 0.5);
-    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    box-shadow: 0 12px 30px rgba(128, 254, 117, 0.5);
+    background: linear-gradient(135deg, #f9bc16 0%, #eac10c 100%);
 }
 
 /* Responsividade Oferta Melhorada */
@@ -3128,7 +3126,7 @@ span.garantia-text {
    =========================================== */
 
 .footer-section {
-    background: linear-gradient(135deg, #0F001A 0%, #1A0B2E 50%, #2E1065 100%);
+    background: linear-gradient(135deg, #031a00 0%, #0b2e0d 50%, #246510 100%);
     color: white;
     padding: 60px 0 0;
     margin-top: 80px;
@@ -3341,14 +3339,14 @@ span.garantia-text {
 }
 
 .btn-footer-primary {
-    background: linear-gradient(135deg, #1e88e5, #0d47a1);
+    background: linear-gradient(135deg, #d8e51e, #b4a905);
     color: white;
 }
 
 .btn-footer-primary:hover {
-    background: linear-gradient(135deg, #0d47a1, #1e88e5);
+    background: linear-gradient(135deg, #d8e51e, #b4a905, #d8e51e);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(30, 136, 229, 0.3);
+    box-shadow: 0 8px 20px rgba(199, 229, 30, 0.3);
 }
 
 .btn-footer-secondary {

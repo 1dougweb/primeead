@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Reembolso - Ensino Certo</title>
-    <meta name="description" content="Política de Reembolso da Ensino Certo. Saiba as condições e procedimentos para solicitar reembolso.">
+    <title>Política de Reembolso - Educa Prime</title>
+    <meta name="description" content="Política de Reembolso da Educa Prime. Saiba as condições e procedimentos para solicitar reembolso.">
     <meta name="robots" content="index, follow">
     
     <!-- CSS -->
@@ -171,7 +171,7 @@
         
         <div class="policy-section">
             <h2>1. Compromisso com a satisfação</h2>
-            <p>A Ensino Certo preza pela qualidade dos seus cursos e serviços. Trabalhamos para oferecer a melhor experiência de aprendizado, mas entendemos que podem surgir situações que levem à solicitação de reembolso. Esta política estabelece as condições, prazos e procedimentos para o reembolso de valores pagos.</p>
+            <p>A Educa Prime preza pela qualidade dos seus cursos e serviços. Trabalhamos para oferecer a melhor experiência de aprendizado, mas entendemos que podem surgir situações que levem à solicitação de reembolso. Esta política estabelece as condições, prazos e procedimentos para o reembolso de valores pagos.</p>
         </div>
         
         <div class="policy-section">
@@ -228,14 +228,14 @@
                 <p>Caso o aluno tenha acessado mais de 20% das aulas ou materiais disponibilizados, a solicitação será analisada individualmente e poderá ser recusada.</p>
             </div>
             <ul>
-                <li>Em casos de fraudes, uso indevido ou descumprimento dos termos de uso, a Ensino Certo se reserva o direito de negar o reembolso.</li>
+                <li>Em casos de fraudes, uso indevido ou descumprimento dos termos de uso, a Educa Prime se reserva o direito de negar o reembolso.</li>
             </ul>
         </div>
         
         <div class="contact-info">
             <h3>Informações de Contato</h3>
             <p><strong>Última atualização:</strong> 29 de abril de 2025</p>
-            <p><strong>Ensino Certo</strong><br>
+            <p><strong>Educa Prime</strong><br>
             CNPJ: 73.075.954/0001-37<br>
             Telefone: (11) 4210-3596</p>
         </div>

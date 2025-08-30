@@ -16,7 +16,7 @@ return new class extends Migration
         DB::table('system_settings')->insert([
             [
                 'key' => 'sidebar_logo_path',
-                'value' => '/assets/images/logotipo-dark.svg',
+                'value' => '/assets/images/logo.svg',
                 'type' => 'string',
                 'category' => 'appearance',
                 'description' => 'Caminho para o logo do sidebar',
@@ -25,7 +25,7 @@ return new class extends Migration
             ],
             [
                 'key' => 'login_logo_path',
-                'value' => '/assets/images/logotipo-dark.svg',
+                'value' => '/assets/images/logo.svg',
                 'type' => 'string',
                 'category' => 'appearance',
                 'description' => 'Caminho para o logo da página de login',

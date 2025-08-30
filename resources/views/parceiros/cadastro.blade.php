@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Seja um Polo Parceiro | Ensino Certo</title>
-    <meta name="description" content="Seja um polo parceiro da Ensino Certo e leve o EJA EaD autorizado pelo CEE/SP para sua cidade">
+    <title>Seja um Polo Parceiro | Educa Prime</title>
+    <meta name="description" content="Seja um polo parceiro da Educa Prime e leve o EJA EaD autorizado pelo CEE/SP para sua cidade">
     
     <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
@@ -83,7 +83,7 @@
         
         .section-title {
             font-size: 2.2rem;
-            color: #0d47a1;
+            color: #0B9950;
             margin-bottom: 30px;
             text-align: center;
             font-weight: 700;
@@ -137,7 +137,7 @@
         }
         
         .presence-section {
-            background: linear-gradient(135deg, #1e88e5, #0d47a1);
+            background: linear-gradient(135deg, #1e88e5, #0B9950);
             color: white;
             padding: 40px;
             border-radius: 15px;
@@ -168,7 +168,7 @@
         
         .form-title {
             font-size: 2rem;
-            color: #0d47a1;
+            color: #0B9950;
             margin-bottom: 30px;
             text-align: center;
             font-weight: 600;
@@ -190,7 +190,7 @@
         }
         
         .step-title {
-            color: #0d47a1;
+            color: #0B9950;
             font-size: 1.4rem;
             font-weight: 600;
             margin-bottom: 25px;
@@ -293,7 +293,7 @@
         }
         
         .btn-submit {
-            background: linear-gradient(135deg, #1e88e5, #0d47a1);
+            background: linear-gradient(135deg, #1e88e5, #0B9950);
             color: white;
             padding: 18px 50px;
             border: none;
@@ -335,7 +335,7 @@
         }
         
         .back-link:hover {
-            color: #0d47a1;
+            color: #0B9950;
         }
         
         .loading-cep {
@@ -424,7 +424,7 @@
         <section class="hero-section">
             <div class="container ">
                 <div class="hero-content cadastro-parceiros">
-                    <h1><center>🎓 Seja um Polo Parceiro da Ensino Certo</center></h1>
+                    <h1><center>🎓 Seja um Polo Parceiro da Educa Prime</center></h1>
                     <p>Leve o EJA EaD autorizado pelo CEE/SP para sua cidade e transforme vidas com educação de qualidade!</p>
                 </div>
             </div>
@@ -477,7 +477,7 @@
                 <!-- Form Section -->
                 <section class="form-section">
                     <h2 class="form-title">✍ Cadastre-se para se tornar um parceiro</h2>
-                    <p class="form-subtitle">Estamos felizes em saber que você quer se tornar um parceiro/polo da Ensino Certo. Para isso, preencha todas as informações abaixo:</p>
+                    <p class="form-subtitle">Estamos felizes em saber que você quer se tornar um parceiro/polo da Educa Prime. Para isso, preencha todas as informações abaixo:</p>
                     
                     <a href="{{ route('home') }}" class="back-link">
                         <i class="fas fa-arrow-left"></i> Voltar ao site

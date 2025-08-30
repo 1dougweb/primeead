@@ -28,7 +28,7 @@ class CreateSharedDrive extends Command
      */
     public function handle()
     {
-        $name = $this->argument('name') ?: 'Ensino Certo - Documentos';
+        $name = $this->argument('name') ?: 'Educa Prime - Documentos';
         
         $this->info('Criando Shared Drive: ' . $name);
         
@@ -72,7 +72,7 @@ class CreateSharedDrive extends Command
             $permission = new \Google\Service\Drive\Permission([
                 'type' => 'user',
                 'role' => 'writer',
-                'emailAddress' => 'ensinocertodocumentos@gmail.com'
+                'emailAddress' => 'primeeaddocumentos@gmail.com'
             ]);
             
             $service->permissions->create($drive->getId(), $permission, [

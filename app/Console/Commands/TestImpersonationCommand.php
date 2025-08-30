@@ -27,7 +27,7 @@ class TestImpersonationCommand extends Command
      */
     public function handle()
     {
-        $adminEmail = $this->argument('admin_email') ?? 'webmaster@ensinocerto.com.br';
+        $adminEmail = $this->argument('admin_email') ?? 'webmaster@primeead.com.br';
         $userEmail = $this->argument('user_email') ?? 'test@example.com';
 
         $this->info('🧪 TESTING IMPERSONATION FUNCTIONALITY');

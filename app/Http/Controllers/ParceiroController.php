@@ -80,7 +80,7 @@ class ParceiroController extends Controller
 
         // Enviar email de notificação para admin
         try {
-            Mail::to(config('mail.admin_email', 'admin@ensinocerto.com.br'))
+            Mail::to(config('mail.admin_email', 'admin@sistema.com.br'))
                 ->send(new ParceiroNovoMail($parceiro));
         } catch (\Exception $e) {
             // Log do erro mas não impede o cadastro

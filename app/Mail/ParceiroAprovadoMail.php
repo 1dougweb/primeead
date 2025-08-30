@@ -35,7 +35,7 @@ class ParceiroAprovadoMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: '✅ Parabéns! Sua candidatura foi aprovada - Ensino Certo',
+            subject: '✅ Parabéns! Sua candidatura foi aprovada - Educa Prime',
         );
     }
 

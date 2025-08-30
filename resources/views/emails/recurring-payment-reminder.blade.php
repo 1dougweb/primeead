@@ -44,12 +44,12 @@
             <p>Se você tiver alguma dúvida ou precisar de ajuda, entre em contato conosco:</p>
             
             <div style="text-align: center; margin: 30px 0;">
-                <a href="mailto:contato@ensinocerto.com" class="btn">📧 Entrar em Contato</a>
+                <a href="mailto:contato@primeead.com" class="btn">📧 Entrar em Contato</a>
             </div>
             
             <div class="footer">
                 <p>Este é um email automático. Por favor, não responda.</p>
-                <p><strong>Ensino Certo</strong> - Educação de Qualidade</p>
+                <p><strong>Educa Prime</strong> - Educação de Qualidade</p>
             </div>
         </div>
     </div>
