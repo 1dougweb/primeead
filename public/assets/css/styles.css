@@ -1,7 +1,7 @@
 :root {
     --highlight-light: #F5F1FF;
     --secondary-button: #FE9E75;
-    --benefit-highlight: #73ce0a;
+    --benefit-highlight: #0d0ace;
 }
 
 /* Estilos Gerais */
@@ -166,8 +166,8 @@ p {
 
 /* Hero Section */
 .hero {
-    background: #067D40;
-    background: linear-gradient(145deg,rgb(6, 125, 12) 0%, rgb(22, 239, 100) 100%);
+    background: #001232;
+    background: linear-gradient(145deg,#001232 0%, #002463 100%);
     padding: 40px 0 80px;
     position: relative;
     color: white;
@@ -269,7 +269,7 @@ p {
 }
 
 .form-container {
-    background-color: #11500A;
+    background-color: #003185;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -360,7 +360,7 @@ p {
 
 .btn-submit {
     width: 100%;
-    background-color: #FFC107;
+    background-color: #0755ff;
     color: white;
     font-size: 18px;
     padding: 15px;
@@ -376,7 +376,7 @@ p {
 }
 
 .btn-submit:hover {
-    background-color: #ccbe00;
+    background-color: #008bcc;
 }
 
 /* Benefits List in Hero */
@@ -995,7 +995,7 @@ p {
 /* Estilos para a seção de Diferenciais */
 #diferenciais {
     padding: 80px 0;
-    background: linear-gradient(135deg, #11500A 0%, #1d701a 100%);
+    background: linear-gradient(135deg, #001232 0%, #002566 100%);
     color: white;
     position: relative;
     overflow: hidden;
@@ -1078,7 +1078,7 @@ p {
     width: 80px;
     height: 80px;
     margin: 0 auto 25px;
-    background: linear-gradient(135deg, #4ebf2c, #187904);
+    background: linear-gradient(135deg, #001232, #001d4e);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1088,7 +1088,7 @@ p {
 
 .diferencial-card:hover .diferencial-icon {
     transform: scale(1.1);
-    box-shadow: 0 10px 30px rgba(38, 250, 38, 0.4);
+    box-shadow: 0 10px 30px rgba(38, 59, 250, 0.4);
 }
 
 .diferencial-icon i {
@@ -1124,7 +1124,7 @@ p {
 }
 
 .btn-primary-cta {
-    background: linear-gradient(135deg, #bf8c2c, #ebff7d);
+    background: linear-gradient(135deg, #2c36bf, #7d7fff);
     color: white;
     font-weight: 700;
     font-size: 1.1rem;
@@ -1155,7 +1155,7 @@ p {
 
 .btn-primary-cta:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(164, 191, 44, 0.4);
+    box-shadow: 0 15px 35px rgba(44, 120, 191, 0.4);
     color: white;
     text-decoration: none;
 }
@@ -1242,7 +1242,7 @@ p {
 }
 
 .estude-casa-text h2 {
-    color: #11500A;
+    color: #0a1550;
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 20px;
@@ -1265,14 +1265,14 @@ p {
 .prazo-info {
     background: white!important;
     min-width: 100%;
-    border-left: 4px solid #0B9950;
+    border-left: 4px solid #0b2099;
     padding: 25px;
     border-radius: 8px;
     margin-top: 30px;
 }
 
 .prazo-info h3 {
-    color: #0B9950;
+    color: #0b2099;
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 10px;
@@ -1378,7 +1378,7 @@ p {
 
 /* Barra de acesso admin */
 .admin-access-bar {
-    background: linear-gradient(135deg, #052702 0%, #167509 100%);
+    background: linear-gradient(135deg, #001232 0%, rgb(16, 9, 117) 100%);
     color: white;
     padding: 8px 0;
     font-size: 0.9rem;
@@ -1684,7 +1684,7 @@ p {
 }
 
 #perguntas-frequentes .section-header h2 {
-    color: #0B9950;
+    color: #0b4499;
     font-size: 42px;
     font-weight: 700;
     margin-bottom: 15px;
@@ -1721,7 +1721,7 @@ p {
 }
 
 .faq-item.active {
-    border-color: #0B9950;
+    border-color: #0b4499;
 }
 
 .faq-question {
@@ -1741,14 +1741,14 @@ p {
 }
 
 .faq-item.active .faq-question {
-    background-color: #0B9950;
+    background-color: #0b4499;
     color: white;
 }
 
 .faq-question i:first-child {
     font-size: 20px;
     margin-right: 15px;
-    color: #0B9950;
+    color: #0b4499;
     min-width: 25px;
 }
 
@@ -1809,7 +1809,7 @@ p {
 }
 
 .acesso-card {
-    background: linear-gradient(135deg, #4fa21f 0%, #4eb027 100%);
+    background: linear-gradient(135deg, #1f42a2 0%, #2752b0 100%);
     border-radius: 16px;
     padding: 25px 35px;
     display: flex;
@@ -1995,7 +1995,7 @@ p {
 
 /* Seção Oferta Especial */
 #oferta-especial {
-    background:#051f00;
+    background:#001232;
     padding: 100px 0;
     position: relative;
     overflow: hidden;
@@ -2011,9 +2011,9 @@ p {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 30% 20%, rgba(88, 237, 58, 0.3) 0%, transparent 50%), 
-                radial-gradient(circle at 70% 80%, rgba(96, 246, 59, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 10% 80%, rgba(131, 247, 85, 0.2) 0%, transparent 50%);
+    background: radial-gradient(circle at 30% 20%, rgba(58, 61, 237, 0.3) 0%, transparent 50%), 
+                radial-gradient(circle at 70% 80%, rgba(59, 93, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 10% 80%, rgba(85, 115, 247, 0.2) 0%, transparent 50%);
     z-index: 1;
 }
 
@@ -2046,7 +2046,7 @@ p {
 }
 
 .promocao-banner {
-    background-image: linear-gradient(90deg, #4fa300 0%, #5eff00 100%);
+    background-image: linear-gradient(90deg, #000ba3 0%, #002fff 100%);
     border-radius: 24px;
     margin-bottom: 20px;
     position: relative;
@@ -2093,7 +2093,7 @@ p {
 }
 
 .countdown-icon {
-    background: #071f00;
+    background: #001232;
     border-radius: 50%;
     position: absolute;
     left: 33%;
@@ -2113,7 +2113,7 @@ p {
     display: flex;
     border-radius: 14px;
     padding: 8px 20px 8px 40px;
-    background-color: #071f00;
+    background-color: #001232;
     gap: 20px;
 }
 
@@ -2174,7 +2174,7 @@ p {
 .preco-desconto {
     padding: 20px;
     border-radius: 16px;
-    background-color: #1b2b03;
+    background-color: #03162b;
     gap: 0px!important;
     display: flex;
     flex-direction: column;
@@ -3126,7 +3126,7 @@ span.garantia-text {
    =========================================== */
 
 .footer-section {
-    background: linear-gradient(135deg, #031a00 0%, #0b2e0d 50%, #246510 100%);
+    background: linear-gradient(135deg, #00091a 0%, #0b162e 50%, #102065 100%);
     color: white;
     padding: 60px 0 0;
     margin-top: 80px;
@@ -3339,14 +3339,14 @@ span.garantia-text {
 }
 
 .btn-footer-primary {
-    background: linear-gradient(135deg, #d8e51e, #b4a905);
+    background: linear-gradient(135deg, #1e21e5, #0517b4);
     color: white;
 }
 
 .btn-footer-primary:hover {
-    background: linear-gradient(135deg, #d8e51e, #b4a905, #d8e51e);
+    background: linear-gradient(135deg, #1e21e5, #0534b4, #0517b4);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(199, 229, 30, 0.3);
+    box-shadow: 0 8px 20px rgba(30, 222, 229, 0.3);
 }
 
 .btn-footer-secondary {

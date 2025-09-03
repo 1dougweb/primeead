@@ -14,8 +14,8 @@
     
     <style>
         :root {
-            --primary-color:rgb(107, 156, 74);
-            --primary-hover:rgb(82, 124, 58);
+            --primary-color:rgb(74, 93, 156);
+            --primary-hover:rgb(58, 73, 124);
             --border-radius: 12px;
         }
         

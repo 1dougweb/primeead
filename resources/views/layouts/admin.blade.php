@@ -38,7 +38,7 @@
             --sidebar-collapsed-width: 0;
             --transition-speed: 0.35s;
             --transition-curve: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-            --sidebar-color: #0B9950!important;
+            --sidebar-color: #001232!important;
             --sidebar-hover: #3a3a7c;
             --sidebar-color: {{ $currentTheme['primary_color'] ?? '#4a4a9c' }};
             --sidebar-hover:#3A5998;
@@ -223,7 +223,7 @@
             width: 40px !important;
             height: 40px !important;
             border-radius: 50% !important;
-            background: #0B9950 !important;
+            background: var(--sidebar-color) !important;
             color: white !important;
             display: flex !important;
             align-items: center !important;
@@ -231,7 +231,7 @@
             cursor: pointer !important;
             border: none !important;
             opacity: 1 !important;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
+            box-shadow: 0 2px 8px rgba(27, 156, 207, 0.5) !important;
             font-size: 16px !important;
         }
         
