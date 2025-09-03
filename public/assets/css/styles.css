@@ -818,7 +818,7 @@ p {
 }
 
 .iti__country-list {
-    background-color: #11500A;
+    background-color: #1e40af;
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: white;
     max-height: 200px;
@@ -870,7 +870,7 @@ p {
 }
 
 .custom-select select option {
-    background-color: #11500A;
+    background-color: #1e40af;
     color: white;
 }
 
@@ -1443,7 +1443,7 @@ p {
 /* Estilos para a seção Tire suas dúvidas */
 #tire-duvidas {
     padding: 80px 0;
-    background: linear-gradient(135deg, #11500A 0%, #4a1a70 100%);
+    background: linear-gradient(135deg, #1e40af 0%, #4a1a70 100%);
     color: white;
     position: relative;
     overflow: hidden;
