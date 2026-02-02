@@ -324,6 +324,8 @@ class MatriculaController extends Controller
                 'escola_parceira' => 'nullable|boolean',
                 'parceiro_id' => 'nullable|required_if:escola_parceira,1|exists:parceiros,id',
                 'google_drive_folder_id' => 'nullable|string',
+                'data_prova' => 'nullable|string',
+                'codigo_rastreio' => 'nullable|string|max:150',
             ]);
 
             $validated = $request->validate($baseRules, [
@@ -648,6 +650,8 @@ class MatriculaController extends Controller
             'escola_parceira' => 'nullable|boolean',
             'parceiro_id' => 'nullable|required_if:escola_parceira,1|exists:parceiros,id',
             'google_drive_folder_id' => 'nullable|string',
+            'data_prova' => 'nullable|string',
+            'codigo_rastreio' => 'nullable|string|max:150',
         ]);
 
             // Ajustes baseados no gateway de pagamento para update

@@ -65,7 +65,9 @@ class Matricula extends Model
         'doc_historico',
         'doc_certificado',
         'doc_outros',
-        'google_drive_folder_id'
+        'google_drive_folder_id',
+        'data_prova',
+        'codigo_rastreio'
     ];
 
     protected $casts = [

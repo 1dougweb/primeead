@@ -453,6 +453,30 @@
                     </div>
                     <div class="card-body">
                         <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="codigo_rastreio" class="form-label">Código Rastreio Correios</label>
+                                <input type="text" 
+                                       class="form-control @error('codigo_rastreio') is-invalid @enderror" 
+                                       id="codigo_rastreio" 
+                                       name="codigo_rastreio" 
+                                       value="{{ old('codigo_rastreio') }}">
+                                @error('codigo_rastreio')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="data_prova" class="form-label">Datas de Prova</label>
+                                <textarea class="form-control @error('data_prova') is-invalid @enderror" 
+                                          id="data_prova" 
+                                          name="data_prova" 
+                                          rows="3"
+                                          placeholder="Informe as datas das provas...">{{ old('data_prova') }}</textarea>
+                                @error('data_prova')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
                             <div class="col-md-12">
                                 <label for="observacoes" class="form-label">Observações</label>
                                 <textarea class="form-control @error('observacoes') is-invalid @enderror" 
